@@ -1,0 +1,63 @@
+go.property("collisionActive", true)
+go.property("triggerActive", true)
+go.property("noSprite", false)
+
+function init(self)
+    self.playerContact = false
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") and self.triggerActive then
+		if message.enter and not self.playerContact and message.other_group == hash("player") then
+			msg.post(message.other_id, "registerInteractable", {interactable = go.get_id()})
+			self.playerContact = true
+			-- enable outline
+			if not self.noSprite then
+			     go.set("#sprite", "u_outline_settings.w", OUTLINE_WIDTH)
+			end
+		elseif not message.enter and self.playerContact and message.other_group == hash("player") then
+			msg.post(message.other_id, "removeInteractable", {interactable = go.get_id()})
+			self.playerContact = false
+			-- disable outline
+			if not self.noSprite then
+			     go.set("#sprite", "u_outline_settings.w", 0)
+			end
+		end
+		
+	elseif message_id == hash("animation_done") then
+	   if not self.noSprite then
+		  go.set("#sprite", "playback_rate", 0)
+	   end
+
+	elseif message_id == hash("getCollisionActive") then
+		msg.post(sender, message_id, {collisionActive = self.collisionActive})
+		
+	elseif message_id == hash("setCollisionActive") then
+		self.collisionActive = message.collisionActive 
+		physics.set_group("#collision", (self.collisionActive and "wall" or "player"))
+		
+	elseif message_id == hash("setTriggerActive") then
+		self.triggerActive = message.triggerActive
+		if self.playerContact and not self.triggerActive then
+		  msg.post(PLAYER_URL, "removeInteractable", {interactable = go.get_id()})
+		  -- disable outline
+		  if not self.noSprite then
+		      go.set("#sprite", "u_outline_settings.w", 0)
+		  end
+		  self.playerContact = false
+		end
+		
+	elseif message_id == hash("SetPosition") then
+		print(go.get_position())
+		go.set_position(message.newPosition)
+		print(go.get_position())
+		
+	elseif message_id == hash("RegisterAsInteractable") then
+	    msg.post(PLAYER_URL, "registerInteractable", {interactable = go.get_id()})
+	    self.playerContact = true
+	    -- enable outline
+	    if not self.noSprite then
+	       go.set("#sprite", "u_outline_settings.w", OUTLINE_WIDTH)
+	    end
+	end
+end

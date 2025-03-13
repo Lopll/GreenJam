@@ -1,0 +1,7 @@
+go.property("DoorURL", msg.url())
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		msg.post(self.DoorURL, "Reset")
+	end
+end

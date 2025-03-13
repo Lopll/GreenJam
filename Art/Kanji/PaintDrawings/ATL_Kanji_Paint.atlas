@@ -1,0 +1,64 @@
+images {
+  image: "/Art/Kanji/PaintDrawings/1.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/2.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/3.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/4.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/5.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Sun.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Minus.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Plus.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/SunVertical.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Moon.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/6.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/7.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Equals.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/8.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/5Vertical.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/9.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/10.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/1K.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/10K.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/100.png"
+}
+images {
+  image: "/Art/Kanji/PaintDrawings/Year.png"
+}
+extrude_borders: 2

@@ -1,0 +1,40 @@
+go.property("itemName", hash(""))
+
+function init(self)
+    local item = ITEM_DB.getItem(self.itemName)
+    sprite.play_flipbook("#sprite", item.icon)
+end
+
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData", 
+    {url = msg.url(go.get_id()), data = {deleted = true}})
+end
+
+function on_message(self, message_id, message, sender)
+    local item = ITEM_DB.getItem(self.itemName)
+    if message_id == hash("Interaction") then
+        msg.post(INVENTORY, "AddItem", item)        
+    
+    elseif message_id == hash("AddItemSuccess") then
+        -- show notification
+        msg.post(HUD, "ShowNotification", {text = "+"..item.label})
+        -- delete item from world and save changes
+        msg.post(PLAYER_URL, "removeInteractable", {interactable = go.get_id()})
+        -- msg.post(SCENE_MANAGER, "PlaySound", {sound = SOUNDS.})
+        
+        updateSaveData(self)
+        
+        -- notify pareny that object was deleted from the world
+        local parent = go.get_parent(go.get_id())
+        if parent ~= nil then
+            msg.post(parent, "ObjectWasPicked")
+        end
+        
+        timer.delay(0.1, false, function() go.delete() end)
+        
+    elseif message_id == hash("LoadData") then
+	   if message.deleted then
+	       go.delete()
+	   end    
+    end
+end

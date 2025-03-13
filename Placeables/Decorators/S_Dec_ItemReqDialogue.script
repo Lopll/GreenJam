@@ -1,0 +1,56 @@
+local AdditionalTable = require "LuaModules.AdditionalTable"
+
+-- this item will be searched in player's inventory
+go.property("reqItemName", hash(""))
+go.property("reqItemAmount", 0)
+-- dialogue options, depended on item's amount
+go.property("completeDialogueName", hash(""))
+go.property("almostCompleteDialogueName", hash(""))
+go.property("incompleteDialogueName", hash(""))
+-- if true - no dialogues will be available after ending complete dialogue
+go.property("endOnComplete", false)
+
+-- current player's inventory
+local playerItems
+
+function init(self)
+    msg.post(".", "RegisterDecorator")
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        -- check, wether player has required item or not
+        
+        local actualItemAmount = 0
+        for k,v in pairs(playerItems) do
+            if hash(v.name) == self.reqItemName then
+                actualItemAmount = actualItemAmount + 1 
+            end
+        end
+        -- define, which dialog to set
+        if actualItemAmount == self.reqItemAmount then
+            msg.post(".", "SetDialogueName", {dialogueName = self.completeDialogueName})
+            
+            -- delete req items
+            local item = ITEM_DB.getItem(self.reqItemName)
+            
+            for i = 1, #playerItems do
+                if hash(playerItems[i].name) == self.reqItemName and self.reqItemAmount ~= 0 then
+                    msg.post(INVENTORY, "RemoveItem", {cellNumber = i})
+                    self.reqItemAmount = self.reqItemAmount - 1
+                end
+            end
+            
+            msg.post(".", "SetOnce", {once = self.endOnComplete})
+            
+        elseif actualItemAmount ~= 0 then
+            msg.post(".", "SetDialogueName", {dialogueName = self.almostCompleteDialogueName})
+        else
+            msg.post(".", "SetDialogueName", {dialogueName = self.incompleteDialogueName})
+        end
+    elseif message_id == hash("trigger_response") then
+        msg.post(INVENTORY, "GetInventoryItems")
+    elseif message_id == hash("GetInventoryItems") then
+        playerItems = message.inventoryItems
+    end
+end

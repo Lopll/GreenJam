@@ -1,0 +1,42 @@
+local camera = require "orthographic.camera"
+
+-- movement speed of each particle
+local speed = 200
+local acceptanceRadius = 1
+
+function init(self)
+    msg.post(HUD, "GetPosition", {nodeName = "InkBar"})
+    
+    self.inkwellPos = nil
+    self.startMovement = false
+end
+
+function update(self,dt)
+    if self.startMovement then
+        local pos = go.get_position()
+        -- convert inkwell coord
+        local inkwellWorldPos = camera.screen_to_world(nil, self.inkwellPos)
+        local dest = vmath.normalize(inkwellWorldPos - pos)
+        pos = pos + dest * speed * dt
+        pos.z = 10
+        go.set_position(pos)
+        
+        if (pos.x < inkwellWorldPos.x+acceptanceRadius and pos.x > inkwellWorldPos.x-acceptanceRadius) or
+            (pos.y < inkwellWorldPos.y+acceptanceRadius and pos.y > inkwellWorldPos.y-acceptanceRadius) then
+            
+            msg.post(PLAYER_URL, "ChangeInk", {delta = 1})
+            go.delete()
+            
+        end
+    end
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("trigger_response") then
+        self.startMovement = true
+        
+    elseif message_id == hash("GetPosition") then
+        -- save in screen coords
+        self.inkwellPos = message.position
+    end
+end

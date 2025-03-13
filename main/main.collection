@@ -1,0 +1,13 @@
+name: "main.collection"
+instances {
+  id: "SceneManager"
+  prototype: "/Core/SceneManager/GO_SceneManager.go"
+}
+instances {
+  id: "GUI_GO"
+  prototype: "/Core/GUI/GO_GUI_Layout.go"
+  position {
+    z: 10.0
+  }
+}
+scale_along_z: 0

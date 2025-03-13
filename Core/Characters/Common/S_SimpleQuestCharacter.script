@@ -1,0 +1,6 @@
+go.property("atlas", resource.atlas())
+
+function init(self)
+    go.set("#sprite", "image", self.atlas)
+    sprite.play_flipbook("#sprite", "IDLE")
+end

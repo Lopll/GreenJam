@@ -1,0 +1,47 @@
+go.property("triggerActive", true)
+go.property("functionsAmount", 1)
+go.property("interactableEvent", false)
+go.property("onInit", false)
+-- go.property("deleteEvent", )
+
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData", 
+    {url = msg.url(go.get_id()),
+     data = 
+     {
+        deleted = true
+     }
+     })
+end
+
+local function triggerEvents(self)
+	for i = 1, self.functionsAmount do 
+		msg.post("#function"..tostring(i), "Call")
+	end
+	timer.delay(0.05, false, updateSaveData)
+	timer.delay(0.2, false, 
+	function() 
+	  msg.post(".", "setTriggerActive", {triggerActive = false})
+	  go.delete() 
+	end)
+end
+
+function init(self)	
+	if self.onInit then
+		triggerEvents(self)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if (self.triggerActive and message_id == hash("trigger_response") and not self.interactableEvent) 
+	   or (message_id == hash("Interaction") and self.interactableEvent)then
+		
+		triggerEvents(self)
+		
+	elseif message_id == hash("LoadData") then
+	   if message.deleted then
+	       go.delete()
+	   end
+	   
+	end
+end

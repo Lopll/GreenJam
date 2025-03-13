@@ -1,0 +1,56 @@
+name: "World2"
+instances {
+  id: "GO_WorldObjectManager"
+  prototype: "/Core/WorldObjectManager/GO_WorldObjectManager.go"
+  component_properties {
+    id: "WorldObjectManager"
+    properties {
+      id: "worldNumber"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "PuzzleManager"
+  prototype: "/Core/PuzzleManager/GO_PuzzleManager.go"
+}
+collection_instances {
+  id: "PlayerCollection"
+  collection: "/Core/Player/PlayerCollection.collection"
+  position {
+    x: -34.0
+    y: -736.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "tilemap"
+  data: "components {\n"
+  "  id: \"BasicTileMap1\"\n"
+  "  component: \"/Core/TileMap/S_TileMap.script\"\n"
+  "  properties {\n"
+  "    id: \"enable\"\n"
+  "    value: \"true\"\n"
+  "    type: PROPERTY_TYPE_BOOLEAN\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"tilemap\"\n"
+  "  component: \"/Art/TileMaps/Basement/TM_Floor05.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/Art/TileMaps/Basement/TM_Floor05.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

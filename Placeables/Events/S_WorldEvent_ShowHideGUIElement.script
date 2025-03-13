@@ -1,0 +1,14 @@
+go.property("GUI_ElementURL", msg.url())
+
+function init(self)
+	self.currentAlpha = 1 
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		timer.delay(0.1, false, function(self) msg.post(self.GUI_ElementURL, "ToggleAlpha") end)
+
+		timer.delay(1.2, false, function(self) msg.post(self.GUI_ElementURL, "ToggleAlpha") end)
+	end
+end
+

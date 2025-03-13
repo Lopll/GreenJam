@@ -1,0 +1,26 @@
+go.property("kanji", hash("Sun"))
+
+function init(self)
+	msg.post("#KanjiTestInitiator", "SetKanji", {kanji = self.kanji})
+	
+	local currentPosition = go.get_position()
+	go.set_position(vmath.vector3(currentPosition.x, currentPosition.y, -50))
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Interaction") then
+		msg.post("#KanjiTestInitiator", "KanjiTest")
+		
+	elseif message_id == hash("TestAccepted") then
+		-- create light source 
+		local light = factory.create("#factory", go.get(PLAYER_URL, "position"))
+		go.set_scale(0.3, light)
+		msg.post(light, "SetKanji", {kanji = self.kanji})
+		msg.post(light, "SetParent", {parent = go.get_id()})
+		
+	elseif message_id == hash("Deactivate") then
+		-- delete self
+		msg.post(PLAYER_URL, "removeInteractable", {interactable = go.get_id()})
+		go.delete()
+	end
+end

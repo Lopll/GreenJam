@@ -1,0 +1,30 @@
+go.property("kanjiName", hash("None"))
+go.property("testDifficulty", 1)
+go.property("testAmount", 1)
+
+go.property("delay", 0)
+
+function init(self)
+    self.owner = nil
+end
+
+local function startTest(self)
+    msg.post("PlayerCollection/GUI_GO#HandwritingGUI", "ToggleAlpha")
+    msg.post("PlayerCollection/GUI_GO#HandwritingGUI", "SetKanji", {
+        kanjiName = self.kanjiName,
+        testDifficulty = self.testDifficulty,
+        testAmount = self.testAmount,
+        initiator = go.get_id()
+    })
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        self.owner = sender
+        timer.delay(self.delay, false, startTest)
+        -- if needed, this should post message to specified function, with common owner URL as a parameter
+    elseif message_id == hash("TestAccepted") then
+        msg.post(self.owner, "RestCall")
+    end
+end
+

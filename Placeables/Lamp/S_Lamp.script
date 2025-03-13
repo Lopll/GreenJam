@@ -1,0 +1,39 @@
+-- alpha of the light sprite
+go.property("alpha", 0)
+
+local COLORS = {GREEN = vmath.vector3(0, 255, 0), RED = vmath.vector3(255, 0, 0)}
+
+-- easing function values for light's alpha animation
+local values = {
+                1, 1, 1, 1, 1, 1, 1, 1,
+                0, 0, 0, 0, 0, 0, 0, 0,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                0, 0, 0, 0, 0, 0, 0, 0,
+                1, 1, 1, 1, 1, 1, 1, 1}
+local lightEasing = vmath.vector(values)
+
+function init(self)
+    msg.post(go.get_parent(), "RegisterLamp")
+    
+    -- current light color
+    self.currentColor = COLORS.GREEN
+    self.prevAlpha = 0
+    
+    go.set("#light", "tint", vmath.vector4(1, 1, 1, self.alpha))
+end
+
+
+function update(self, dt)
+    if self.prevAlpha ~= self.alpha then
+        self.prevAlpha = self.alpha
+        go.set("#light", "tint", vmath.vector4(self.currentColor.x/255, self.currentColor.y/255, self.currentColor.z/255, self.alpha))
+    end
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Activate") then
+        self.currentColor = COLORS[message.color]
+        self.alpha = 0
+        go.animate("#", "alpha", go.PLAYBACK_ONCE_FORWARD, 1, lightEasing, 2)
+    end
+end

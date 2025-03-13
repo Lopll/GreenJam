@@ -1,0 +1,59 @@
+go.property("itemName", hash(""))
+
+-- price modifier for vending machines
+local PRICE_MODIFIER = 1.05
+
+-- Player's kanji points 
+local kanjiPoints 
+-- item price with all modifiers
+local actualItemPrice
+
+function init(self)
+    -- get item (must be done before use bacause of the localization)
+    local item = ITEM_DB.getItem(self.itemName) 
+    actualItemPrice = math.ceil(item.price * PRICE_MODIFIER)
+    sprite.play_flipbook("#itemSprite", item.icon)
+end
+
+-- trying to sell an item to the player if it is possible
+local function sell(self)
+    -- get item (must be done before use bacause of the localization)
+    local item = ITEM_DB.getItem(self.itemName) 
+    if kanjiPoints >= item.price * PRICE_MODIFIER then
+        -- try to sell
+        msg.post(INVENTORY, "AddItem", item)
+    else
+        -- not enough KP - notify about that
+        msg.post(HUD, "ShowNotification", { text = TEXTS.notEnoughKP})
+    end 
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        -- get KP amount and start sell 
+        msg.post(PLAYER_URL, "GetKanjiPoints")
+        timer.delay(0.1, false, sell)
+        
+    elseif message_id == hash("GetKanjiPoints") then
+        kanjiPoints = message.kanjiPoints
+    
+    elseif message_id == hash("AddItemSuccess") then
+        -- get item (must be done before use bacause of the localization)
+        local item = ITEM_DB.getItem(self.itemName) 
+        -- show notification
+        msg.post(HUD, "ShowNotification", {text = "+"..item.label})
+        -- decrease Player's KP
+        msg.post(PLAYER_URL, "AddKanjiPoints", {kanjiPoints = -actualItemPrice})     
+           
+        
+    elseif message_id == hash("Interaction") then
+        -- get item (must be done before use bacause of the localization)
+        local item = ITEM_DB.getItem(self.itemName) 
+        -- show KP counter
+        msg.post(HUD, "ToggleAlpha", {nodeName = "KanjiPoints"})
+        -- set dialogue variables for selling dialogue
+        DIALOGUES_DB.setDialogueVariable(hash("ItemName"), item.label)
+        DIALOGUES_DB.setDialogueVariable(hash("ItemPrice"), actualItemPrice)
+        DIALOGUES_DB.varInit()
+    end
+end

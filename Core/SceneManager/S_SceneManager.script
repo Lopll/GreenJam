@@ -1,0 +1,142 @@
+local SaveLoad = require "LuaModules.SaveLoad"
+
+go.property("worldNum", 1)
+LANG = require "LuaModules.Lang"
+SOUND_COMPONENT = require "LuaModules.Sounds"
+ITEM_DB = require "LuaModules.ItemDB"
+DIALOGUES_DB = require "LuaModules.DialoguesDB"
+KanjiDB_M = require "LuaModules.KanjiDB"
+
+PLAYER_SAVE_NAME = "Player"
+
+-- shader outline width
+OUTLINE_WIDTH = 0.0015
+
+local needToRestart = false
+local needToChangeWorld = false
+local currentWorld = nil
+local worldWasLoaded = false
+
+function init(self)
+    SCENE_MANAGER = msg.url()    
+    
+    ITEM_DB.init()
+    DIALOGUES_DB.init()
+    
+    -- load world
+    msg.post("#", "LoadData")
+    
+    -- hide cursor
+    defos.set_cursor_visible(false)
+    
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("load") then
+        msg.post(currentWorld, message_id)
+        
+    elseif message_id == hash("proxy_loaded") then
+        worldWasLoaded = true
+        
+        msg.post(sender, "init")
+        msg.post(sender, "enable")
+        
+        msg.post(currentWorld, "acquire_input_focus")
+        print("Load:")
+        print(collectgarbage("count")/1024)
+    
+    elseif message_id == hash("unload") then
+        msg.post(currentWorld, "release_input_focus")
+        msg.post(currentWorld, "disable")
+        msg.post(currentWorld, "final")
+        msg.post(currentWorld, message_id)
+        
+    elseif message_id == hash("proxy_unloaded") then
+        worldWasLoaded = false
+        
+        print("Unload:")
+        print(collectgarbage("count")/1024)
+        
+        if needToChangeWorld then
+            currentWorld = "#World"..tostring(self.worldNum)
+            needToChangeWorld = false
+            if not needToRestart then
+                msg.post(currentWorld, "load")
+            end 
+        end
+        
+        if needToRestart then
+            needToRestart = false
+            msg.post(currentWorld, "load")
+        end
+        
+    elseif message_id == hash("restart") then
+        print(sender)
+        msg.post(currentWorld, "disable")
+        msg.post(currentWorld, "final")
+        needToRestart  = true
+        msg.post(currentWorld, "unload")
+        collectgarbage("collect")
+        
+    
+    -- disable time
+    elseif message_id == hash("StopTime") then
+        msg.post(currentWorld, "set_time_step", {factor = 0, mode = 0})
+    
+    -- enable time
+    elseif message_id == hash("StartTime") then
+        msg.post(currentWorld, "set_time_step", {factor = 1, mode = 0})
+    
+    elseif message_id == hash("SetWorld") then
+        self.worldNum = message.worldNum
+        needToChangeWorld  = true
+        
+    elseif message_id == hash("ChangeWorld") then
+        self.worldNum = message.worldNum
+        needToChangeWorld  = true
+        msg.post("#", "disable")
+        msg.post("#", "final")
+        msg.post("#", "unload")
+    
+    elseif message_id == hash("SaveData") then
+        SaveLoad.saveData("SceneManager", {worldNum = self.worldNum})
+        
+    elseif message_id == hash("LoadData") then
+        -- get save data if ones exists
+        local save = SaveLoad.loadData("SceneManager")
+        if save ~= 0 then
+            self.worldNum = save.worldNum
+        end
+        
+        -- check current and saved worlds
+        local newWorldName = "#World"..tostring(self.worldNum)
+        needToChangeWorld = currentWorld == nil or currentWorld ~= newWorldName
+        
+        
+        -- change world to the one from save or to default one
+        if needToChangeWorld then
+            -- unload current world if has any
+            if worldWasLoaded then
+                print(currentWorld)
+                msg.post("#", "unload")
+            else
+                currentWorld = newWorldName
+                msg.post(currentWorld, "load")
+            end
+        else
+            msg.post("#", "restart")
+        end
+    
+    elseif message_id == hash("PlaySound") then
+	   -- get path of the sound property in sound component
+	   local snd = sys.load_resource(message.sound)
+	   local path = go.get("#sound", "sound")
+	   resource.set_sound(path, snd)
+	   sound.play("#sound")
+	   
+	elseif message_id == hash("PlayBrushSound") then
+	   sound.play("#brushSound")
+	elseif message_id == hash("StopBrushSound") then
+	   sound.stop("#brushSound")
+    end
+end

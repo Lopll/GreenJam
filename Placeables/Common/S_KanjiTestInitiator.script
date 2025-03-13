@@ -1,0 +1,62 @@
+go.property("testDifficulty", 1)
+go.property("testAmount", 1) -- number of tests for kanji to be accepted
+go.property("difficultyDowngrade", true) -- turn on/off difficulty downgrade
+go.property("difficultyIncrease", true) -- turn on/off difficulty increasion
+go.property("testTime", 0) -- time given for the test to be completed
+
+STROKE_COST = 1 -- ink cost for one stroke 
+
+local playerInk = 0 -- current amount of ink in player's script
+
+function init(self)
+    self.kanji = nil
+end
+
+local function initiateTest(self) -- tries to initiate kanji test
+    
+    -- if kanji property is set, initiate kanji test, else - start free drawing
+    if self.kanji~= nil then
+        -- ink cost for kanji of this module
+        local kanjiCost = 0
+        local kanji = KanjiDB_M.GetKanji(self.kanji)
+        if kanji ~= nil then
+            kanjiCost = #kanji * STROKE_COST
+        end
+        
+        -- if player has enough ink for the test
+        if playerInk >= kanjiCost * self.testAmount then
+             msg.post(HANDWRITING_SCREEN, "ToggleAlpha")
+             msg.post(HANDWRITING_SCREEN, "SetKanji", {
+                 kanjiName = self.kanji,
+                 testDifficulty = self.testDifficulty,
+                 testAmount = self.testAmount,
+                 initiator = msg.url(go.get_id()),
+                 difficultyDowngrade = self.difficultyDowngrade,
+                 difficultyIncrease = self.difficultyIncrease,
+                 playerInk = playerInk,
+                 testTime = self.testTime
+             })
+         else
+            msg.post(HUD, "ShowNotification", {text = TEXTS.notEnoughInkNotif})
+        end
+    else
+        msg.post(HANDWRITING_SCREEN, "PrepareFreeDrawing", {initiator = msg.url(go.get_id())})
+        msg.post(HANDWRITING_SCREEN, "ToggleAlpha")
+    end
+
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("KanjiTest") then
+        msg.post(PLAYER_URL, "GetInk")
+        timer.delay(0.1, false, initiateTest)
+                
+    elseif message_id == hash("KanjiRecognized") then
+        
+    elseif message_id == hash("SetKanji") then
+        self.kanji = message.kanji
+        
+    elseif message_id == hash("GetInkResponse") then
+        playerInk = message.ink
+    end
+end

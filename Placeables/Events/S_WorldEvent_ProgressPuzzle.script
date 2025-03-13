@@ -1,0 +1,13 @@
+go.property("delta", 0)
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        local superParent = go.get_parent(go.get_id())
+        print(superParent)
+        if superParent ~= nil then
+            msg.post(superParent, "ProgressPuzzle", {progress = self.delta})
+        else
+            print("WARNING: ".. tostring(go.get_id()).."' parent must be inside some other game object (puzzle) ")
+        end        
+    end
+end

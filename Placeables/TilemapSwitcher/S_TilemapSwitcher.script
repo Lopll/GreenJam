@@ -1,0 +1,46 @@
+go.property("buildingNum", 0)
+
+-- if delta between entry coordinate and exit coordinate is greater that this value then we change tilemaps
+local TRIGGER_THRESHOLD = 10
+
+-- if the tilemaps were switched. We use toggle switching
+-- false when tilemap 1 is enabled
+local wereSwitched = false
+
+local playerPos
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("trigger_response") then
+        if playerPos ~= nil then -- is it player's second contact with the trigger?
+            -- get player's contact points with the trigger
+            local newPlayerPos = go.get_position(PLAYER_URL)
+            local delta = 0
+            if go.get_rotation().z ~= 0 then -- is it y axis transition?
+                delta = math.abs(playerPos.y - newPlayerPos.y)
+            else
+                delta = math.abs(playerPos.x - newPlayerPos.x)    
+            end
+            -- does player went through the trigger?
+            if delta > TRIGGER_THRESHOLD and self.buildingNum ~= 0 then
+                local roomN = tostring(self.buildingNum)
+                -- switch tilemaps
+                if wereSwitched then
+                    -- show room
+                    tilemap.set_visible("/tilemap#tilemap", "Room"..roomN, true)
+                    tilemap.set_visible("/tilemap#tilemap", "Building"..roomN, false)
+                    wereSwitched = false
+                else
+                    -- hide room
+                    tilemap.set_visible("/tilemap#tilemap", "Room"..roomN, false)
+                    tilemap.set_visible("/tilemap#tilemap", "Building"..roomN, true)
+                    wereSwitched = true
+                end
+                -- if we left trigger - we reset player pos
+                playerPos = nil
+            end
+        else
+            playerPos = go.get_position(PLAYER_URL) 
+        end
+        
+    end
+end

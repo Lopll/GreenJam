@@ -1,0 +1,9 @@
+go.property("objectURL", msg.url())
+go.property("newPosition", vmath.vector3(1, 1, 1))
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		print(self.objectURL)
+		go.set_position(self.newPosition, self.objectURL)
+	end
+end

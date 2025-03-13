@@ -1,0 +1,21 @@
+go.property("numericKanji", 1)
+
+function init(self)
+    local kanjiHash = hash(tostring(self.numericKanji))
+    msg.post("#KanjiTestInitiator", "SetKanji", {kanji = kanjiHash})
+    
+    -- set apropriate sprite
+    sprite.play_flipbook("#kanji", tostring(self.numericKanji))
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Interaction") then
+        msg.post("#KanjiTestInitiator", "KanjiTest")
+    
+    elseif message_id == hash("TestAccepted") then
+        local parent = go.get_parent(go.get_id())
+        if parent then
+            msg.post(parent,"ProgressPuzzle", {progress = self.numericKanji})
+        end
+    end
+end

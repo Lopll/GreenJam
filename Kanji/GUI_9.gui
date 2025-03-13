@@ -1,0 +1,287 @@
+nodes {
+  position {
+    x: -15.0
+    y: 62.0
+  }
+  rotation {
+    z: 11.256
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box10"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -36.0
+    y: -55.0
+  }
+  rotation {
+    z: -14.727
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box12"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -13.0
+    y: 48.0
+  }
+  rotation {
+    z: 1.018
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -13.0
+    y: 35.0
+  }
+  rotation {
+    z: 0.179
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box1"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -16.0
+    y: 14.0
+  }
+  rotation {
+    z: -10.968
+  }
+  size {
+    x: 15.0
+    y: 30.0
+  }
+  type: TYPE_BOX
+  id: "box2"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -26.0
+    y: -24.0
+  }
+  rotation {
+    z: -15.854
+  }
+  size {
+    x: 15.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "box3"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -73.0
+    y: 8.0
+  }
+  rotation {
+    z: 3.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box4"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 36.0
+    y: 19.0
+  }
+  rotation {
+    z: 6.276
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box5"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -19.0
+    y: 13.0
+  }
+  rotation {
+    z: 6.089
+  }
+  size {
+    x: 95.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box6"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 38.0
+    y: 4.0
+  }
+  rotation {
+    z: 6.928
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box7"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 42.0
+    y: -17.0
+  }
+  rotation {
+    z: 13.833
+  }
+  size {
+    x: 15.0
+    y: 30.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box9"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 49.0
+    y: -40.0
+  }
+  rotation {
+    z: 20.364
+  }
+  size {
+    x: 15.0
+    y: 20.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box11"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 54.0
+    y: -56.0
+  }
+  rotation {
+    z: -79.174
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box13"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 68.0
+    y: -55.0
+  }
+  rotation {
+    z: -80.273
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box14"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 81.0
+    y: -51.0
+  }
+  rotation {
+    z: -69.276
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.0
+    y: 0.2
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "box15"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

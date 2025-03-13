@@ -1,0 +1,120 @@
+images {
+  image: "/Characters/Player/Anim_Stand/StandDown.png"
+}
+images {
+  image: "/Characters/Player/Anim_Stand/StandLeft.png"
+}
+images {
+  image: "/Characters/Player/Anim_Stand/StandRight.png"
+}
+images {
+  image: "/Characters/Player/Anim_Stand/StandUp.png"
+}
+animations {
+  id: "WalkDown"
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown1.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown2.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown3.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown4.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown5.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Down/PlayerWalkDown6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkUp"
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp1.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp2.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp3.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp4.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp5.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Up/PlayerWalkUp6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkRight"
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight1.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight2.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight3.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight4.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight5.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Right/PlayerWalkRight6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkLeft"
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft1.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft2.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft3.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft4.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft5.png"
+  }
+  images {
+    image: "/Characters/Player/Anim_Walk/Left/PlayerWalkLeft6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "Dead"
+  images {
+    image: "/Characters/Player/Dead/PlayerDead2.png"
+  }
+  images {
+    image: "/Characters/Player/Dead/PlayerDead3.png"
+  }
+  images {
+    image: "/Characters/Player/Dead/PlayerDead4.png"
+  }
+  images {
+    image: "/Characters/Player/Dead/PlayerDead5.png"
+  }
+  fps: 4
+}

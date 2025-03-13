@@ -1,0 +1,19 @@
+images {
+  image: "/Characters/Player/Emotions/Default.png"
+}
+images {
+  image: "/Characters/Player/Emotions/Happy.png"
+}
+images {
+  image: "/Characters/Player/Emotions/Pissed.png"
+}
+images {
+  image: "/Characters/Player/Emotions/Surprised.png"
+}
+images {
+  image: "/Characters/Player/Emotions/Unimpressed.png"
+}
+images {
+  image: "/Characters/Player/Emotions/Unsure.png"
+}
+extrude_borders: 2

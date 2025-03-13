@@ -1,0 +1,132 @@
+nodes {
+  position {
+    x: -31.5
+    y: 5.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box6"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -63.5
+    y: -57.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box7"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -39.0
+    y: -23.0
+  }
+  rotation {
+    z: -20.0
+  }
+  size {
+    x: 15.0
+    y: 45.0
+  }
+  type: TYPE_BOX
+  id: "box8"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -52.5
+    y: -47.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 9.5
+    y: 47.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.102
+    y: 0.302
+    z: 0.302
+  }
+  type: TYPE_BOX
+  id: "box1"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 39.5
+    y: 1.0
+  }
+  rotation {
+    z: 35.0
+  }
+  size {
+    x: 15.0
+    y: 100.0
+  }
+  color {
+    x: 0.102
+    y: 0.302
+    z: 0.302
+  }
+  type: TYPE_BOX
+  id: "box2"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 83.5
+    y: -50.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.102
+    y: 0.302
+    z: 0.302
+  }
+  type: TYPE_BOX
+  id: "box3"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 70.5
+    y: -47.0
+  }
+  size {
+    x: 15.0
+    y: 15.0
+  }
+  color {
+    x: 0.102
+    y: 0.302
+    z: 0.302
+  }
+  type: TYPE_BOX
+  id: "box4"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

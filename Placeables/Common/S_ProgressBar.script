@@ -1,0 +1,4 @@
+function init(self)
+    local parent = go.get_parent(go.get_id())
+    msg.post(parent, "RegisterProgressBar")
+end

@@ -1,0 +1,349 @@
+images {
+  image: "/Art/Placeables/Crate/CrateClosed.png"
+}
+images {
+  image: "/Art/Placeables/Crate/CrateOpen.png"
+}
+images {
+  image: "/Art/Placeables/KanjiDevices/LightSensorWire.png"
+}
+images {
+  image: "/Art/Placeables/KanjiDevices/LightSensor.png"
+}
+images {
+  image: "/Art/Placeables/Light/LightSun.png"
+}
+images {
+  image: "/Art/Placeables/Light/LightMoon.png"
+}
+images {
+  image: "/Art/Placeables/Light/LightMoonStrong.png"
+}
+images {
+  image: "/Art/Placeables/Light/LightSunStrong.png"
+}
+images {
+  image: "/Art/Placeables/LightZones/SunZone.png"
+}
+images {
+  image: "/Art/Placeables/LightZones/MoonZone.png"
+}
+images {
+  image: "/Art/Placeables/SleepingBag.png"
+}
+images {
+  image: "/Art/Placeables/PaintSigns/Batsu.png"
+}
+images {
+  image: "/Art/Placeables/PaintSigns/MaruBlack.png"
+}
+images {
+  image: "/Art/Placeables/PaintSigns/MaruGreen.png"
+}
+images {
+  image: "/Art/Placeables/PaintSigns/MaruPerspGreen_1.png"
+}
+images {
+  image: "/Art/Placeables/PaintSigns/MaruPerspGreen_2.png"
+}
+images {
+  image: "/Art/Placeables/Signs/E_Sign.png"
+}
+images {
+  image: "/Art/Placeables/Signs/MouseClick_Sign.png"
+}
+images {
+  image: "/Art/Placeables/Signs/WASD_Sign.png"
+}
+images {
+  image: "/Art/Placeables/Windows/Window.png"
+}
+images {
+  image: "/Art/Placeables/Windows/WindowMoon.png"
+}
+images {
+  image: "/Art/Placeables/Windows/WindowSun.png"
+}
+images {
+  image: "/Art/Placeables/Chest/ChestOpen.png"
+}
+images {
+  image: "/Art/Placeables/Chest/ChestClosed.png"
+}
+images {
+  image: "/Art/Placeables/Crane/CraneBody.png"
+}
+images {
+  image: "/Art/Placeables/Crane/CraneHead.png"
+}
+images {
+  image: "/Art/Placeables/Crane/CraneWire.png"
+}
+images {
+  image: "/Art/GUI/Icons/Maru.png"
+}
+images {
+  image: "/Art/Placeables/Signs/I_Sign.png"
+}
+images {
+  image: "/Art/Placeables/Barrel.png"
+}
+images {
+  image: "/Art/Placeables/LiquidPuzzle/LiquidPuzzleBase.png"
+}
+images {
+  image: "/Art/Placeables/LiquidPuzzle/LiquidPuzzleElement.png"
+}
+images {
+  image: "/Art/Placeables/LiquidPuzzle/Liquid.png"
+}
+images {
+  image: "/Art/Placeables/Shadow.png"
+}
+images {
+  image: "/Art/Placeables/Signs/RightMouseClick.png"
+}
+images {
+  image: "/Characters/Pchel/Pchel.png"
+}
+images {
+  image: "/Characters/Robots/TethraBot.png"
+}
+images {
+  image: "/Art/Placeables/Signs/MenuSign.png"
+}
+images {
+  image: "/Art/Placeables/Tree/Tree.png"
+}
+images {
+  image: "/Art/Placeables/Tree/TreeUp.png"
+}
+images {
+  image: "/Art/Placeables/Tree/TreeDown.png"
+}
+images {
+  image: "/Art/Placeables/VendingMachine/VengingMachine.png"
+}
+images {
+  image: "/Art/Placeables/VendingMachine/VengingMachineLightAddition.png"
+}
+images {
+  image: "/Art/Placeables/Lock/Lock.png"
+}
+images {
+  image: "/Art/Placeables/Lamp/Lamp.png"
+}
+images {
+  image: "/Art/Placeables/Lamp/LampWhite.png"
+}
+images {
+  image: "/Art/Placeables/MusicPlayer/MusicPlayer.png"
+}
+images {
+  image: "/Art/Placeables/Monitors/Monitor.png"
+}
+animations {
+  id: "HintON"
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint1.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint2.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint3.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint4.png"
+  }
+  fps: 35
+}
+animations {
+  id: "HintOFF"
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint1.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint2.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint3.png"
+  }
+  images {
+    image: "/Art/Placeables/InteractionHint/InteractionHint4.png"
+  }
+  playback: PLAYBACK_ONCE_BACKWARD
+  fps: 35
+}
+animations {
+  id: "DoorOpenFront"
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen2.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen4.png"
+  }
+  fps: 14
+}
+animations {
+  id: "DoorOpenSide"
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen4.png"
+  }
+  playback: PLAYBACK_ONCE_BACKWARD
+  fps: 14
+}
+animations {
+  id: "DoorCloseFront"
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen2.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen4.png"
+  }
+  playback: PLAYBACK_ONCE_BACKWARD
+  fps: 14
+}
+animations {
+  id: "DoorCloseSide"
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/BasementDoor/DoorOpen4.png"
+  }
+  fps: 14
+}
+animations {
+  id: "CarpetWrold1"
+  images {
+    image: "/Art/Placeables/Carpets/KanjiCarpetWorld1.png"
+  }
+  images {
+    image: "/Art/Placeables/Carpets/KanjiCarpetDisabledWorld1.png"
+  }
+  fps: 0
+}
+animations {
+  id: "FenceDoorOpenFront"
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen2.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen4.png"
+  }
+  fps: 14
+}
+animations {
+  id: "FenceDoorOpenSide"
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen4.png"
+  }
+  playback: PLAYBACK_ONCE_BACKWARD
+  fps: 14
+}
+animations {
+  id: "FenceDoorCloseFront"
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen2.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen4.png"
+  }
+  playback: PLAYBACK_ONCE_BACKWARD
+  fps: 14
+}
+animations {
+  id: "FenceDoorCloseSide"
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen1.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen3.png"
+  }
+  images {
+    image: "/Art/Placeables/Door/FenceDoor/FenceDoorOpen4.png"
+  }
+  fps: 14
+}
+animations {
+  id: "MusicPlayerPlay"
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound1.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound2.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound3.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound4.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound5.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound6.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound7.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound8.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound9.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound10.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound11.png"
+  }
+  images {
+    image: "/Art/Placeables/MusicPlayer/Animation/MusicPlayerSound12.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2

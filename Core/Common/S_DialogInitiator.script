@@ -1,0 +1,43 @@
+local Sound = require "LuaModules.Sounds"
+
+go.property("dialogueName", hash(""))
+go.property("once", false)
+go.property("deleteOnRead", false)
+
+function init(self)
+    -- functions 
+    self.decorators = {}
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Interaction") then
+        for i, v in pairs(self.decorators) do
+            msg.post(v, "Call")
+        end
+        
+        msg.post("#WorldElement", "setTriggerActive", {triggerActive = false})
+        -- it needs some time to get proper dialogue name
+        timer.delay(0.05, false, function() msg.post(HUD, "StartDialogue", {dialogue = self.dialogueName}) end) 
+        
+    elseif message_id == hash("EndDialogue") then
+        if not self.once then
+            -- enable trigger 
+            msg.post("#WorldElement", "setTriggerActive", {triggerActive = true})
+        end
+        
+        if self.deleteOnRead then
+            go.delete()
+        end
+        
+        if message.functionNumber ~= 0 and message.functionNumber ~= nil then
+            msg.post("#function"..tostring(message.functionNumber), "Call")
+        end
+        
+    elseif message_id == hash("SetDialogueName") then
+        self.dialogueName = message.dialogueName
+    elseif message_id == hash("RegisterDecorator") then
+        table.insert(self.decorators, sender)
+    elseif message_id == hash("SetOnce") then
+        self.once = message.once
+    end
+end

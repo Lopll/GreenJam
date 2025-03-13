@@ -1,0 +1,3 @@
+go.property("particleType", hash("Sun"))
+
+function init(self) sprite.play_flipbook("#sprite", self.particleType) end

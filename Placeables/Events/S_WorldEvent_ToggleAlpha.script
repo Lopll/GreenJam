@@ -1,0 +1,38 @@
+go.property("Element", hash(""))
+go.property("componentName", hash(""))
+go.property("enable", true)
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+	   local receiver = nil
+	   
+	   -- define receiver
+	   if self.Element == hash("INVENTORY") then
+	       receiver = INVENTORY
+	   elseif self.Element == hash("HUD") then
+	       receiver = HUD
+	   elseif self.Element == hash("MENU") then
+	       receiver = MENU
+	   elseif self.Element == hash("HANDWRITING_SYSTEM") then
+	       receiver = HANDWRITING_SYSTEM
+	   elseif self.Element == hash("PLAYER") then
+	       receiver = PLAYER_URL
+	   end
+	   
+	   
+	   local component
+	   if self.componentName ~= hash("") then
+	       component = msg.url(receiver.socket, receiver.path, self.componentName)
+	   else
+	       component = msg.url(receiver.socket, receiver.path, receiver.fragment)
+	   end
+	   
+	   if self.enable then
+	       msg.post(component, "enable")
+	   else
+	       msg.post(component, "disable")
+	   end
+	   msg.post(receiver, "ComponentEnableChange", {component = self.componentName, enable = self.enable})
+	end
+end
+

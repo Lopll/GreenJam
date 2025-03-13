@@ -1,0 +1,10 @@
+go.property("noteNumber", 1)
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		msg.post(INVENTORY, "SetDiaryNote", {noteNumber = self.noteNumber})
+		msg.post(HUD, "ShowNotification", {text = TEXTS.diaryNotif})
+		sound.play("#sound")
+	end
+end
+

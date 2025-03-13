@@ -1,0 +1,33 @@
+function init(self)
+    -- is music player active?
+    self.isMusicPlaying = false
+    self.isMusicPaused = false
+end
+
+function on_message(self, message_id, message, sender)
+
+    if message_id == hash("PlayMusic") or (message_id == hash("Interaction") and not self.isMusicPlaying and not self.isMusicPaused) then
+	   sound.play("#music")
+	   sprite.play_flipbook("#sprite", "MusicPlayerPlay")
+	   self.isMusicPlaying = true
+	   self.isMusicPaused = false
+	
+	elseif message_id == hash("PlayMusic") or (message_id == hash("Interaction") and not self.isMusicPlaying and self.isMusicPaused) then
+	   sound.pause("#music", false)
+	   sprite.play_flipbook("#sprite", "MusicPlayerPlay")
+	   self.isMusicPlaying = true
+	   self.isMusicPaused = false
+	
+	elseif message_id == hash("StopMusic") then
+	   sound.stop("#music")
+	   sprite.play_flipbook("#sprite", "MusicPlayer")
+	   self.isMusicPlaying = false
+	   self.isMusicPaused = false
+	   
+	elseif message_id == hash("PauseMusic") or (message_id == hash("Interaction") and self.isMusicPlaying)then
+	   sound.pause("#music", true)
+	   sprite.play_flipbook("#sprite", "MusicPlayer")
+	   self.isMusicPlaying = false
+	   self.isMusicPaused = true
+	end
+end

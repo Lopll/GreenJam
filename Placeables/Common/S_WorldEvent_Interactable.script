@@ -1,0 +1,57 @@
+go.property("triggerActive", true)
+-- first functions to be called
+go.property("functionsAmountMIN", 1)
+-- second functions to be called
+go.property("functionsAmountMAX", 1)
+
+-- calls functions from min to max, preventing from multiple call
+local function callFuncs(self, min, max)
+    local temp = self.functionAmountMAX
+    if self.functionAmountMAX ~= 0 then
+        self.functionAmountMAX = 0
+        for i = min, max do
+            print("Call")
+            msg.post("#function" .. tostring(i), "Call")
+        end
+        timer.delay(2, false, function(self)
+            self.functionAmountMAX = temp
+        end)
+    end
+end
+
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData", 
+    {url = msg.url(go.get_id()),
+     data = 
+     {
+        deleted = true
+     }
+     })
+end
+
+function on_message(self, message_id, message, sender)
+    if self.triggerActive and message_id == hash("trigger_response") then
+        if message.enter then
+            msg.post(message.other_id, "registerInteractable",
+                     {interactable = go.get_id()})
+        else
+            msg.post(message.other_id, "removeInteractable",
+                     {interactable = go.get_id()})
+        end
+    elseif message_id == hash("Interaction") then
+        callFuncs(self, 1, self.functionsAmountMIN)
+    elseif message_id == hash("TestAccepted") then
+        self.triggerActive = false
+        msg.post(PLAYER_URL, "removeInteractable",
+        {interactable = go.get_id()})
+    elseif message_id == hash("RestCall") then
+        callFuncs(self, self.functionsAmountMIN, self.functionsAmountMAX)
+        timer.delay(3, false, updateSaveData)
+        timer.delay(4, false, function() go.delete() end)
+        
+    elseif message_id == hash("LoadData") then
+	   if message.deleted then
+	       go.delete()
+	   end
+    end
+end

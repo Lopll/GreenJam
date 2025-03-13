@@ -1,0 +1,9 @@
+go.property("particleSystemURL", msg.url())
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		msg.post(self.particleSystemURL, "SpawnParticles")
+		print("")
+	end
+end

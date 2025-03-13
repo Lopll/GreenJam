@@ -1,0 +1,10 @@
+function on_message(self, message_id, message, sender)
+    if message_id == hash("trigger_response") then
+        local rand = rnd.range(1, 10)
+        msg.post(PLAYER_URL, "AddKanjiPoints", {kanjiPoints = math.floor(rand)})
+        
+        msg.post(HUD, "ShowNotification", {text = "+"..rand.." "..TEXTS.kanjiPointsDialogue})
+        
+        go.delete()
+    end
+end

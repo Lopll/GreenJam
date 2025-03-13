@@ -1,0 +1,69 @@
+go.property("deleteLayersAmount", 1)
+go.property("enable", true)
+
+TILE_SIZE = 32
+
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData", 
+    {url = msg.url(go.get_id()),
+    data = {
+    deleteLayers = self.deleteLayers
+    }})
+end
+
+function init(self)
+    -- table of all delete layers. key = layers number, values = visibility of the layer
+    self.deleteLayers = {}
+
+    local tableInsert = table.insert -- better performance
+    for i = 0, self.deleteLayersAmount do
+        tableInsert(self.deleteLayers, i, true)
+    end
+    -- delete 0 is always visible at the beginning
+    self.deleteLayers[0] = false
+    
+    timer.delay(1, false, updateSaveData)
+    
+    if not self.enable then
+        msg.post("#", "HideTilemap")
+    end
+end
+
+-- hides/shows tilemap's delete (black) layers
+local function setBlackLayers(self, show)
+    local count = #self.deleteLayers
+    for i = 0, count-1 do
+        tilemap.set_visible("#tilemap", "Delete"..tostring(i), show)
+    end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("showRoom") then
+		--print("Hidden tilemap: " .. tostring(message.roomNum))
+		tilemap.set_visible("#tilemap", "Delete"..tostring(message.roomNum), false)
+		self.deleteLayers[message.roomNum] = false
+		updateSaveData(self)
+		
+	elseif message_id == hash("LoadData") then
+	   for key, value in pairs(message.deleteLayers) do
+	       if value ~= self.deleteLayers[key] then
+	           tilemap.set_visible("#tilemap", "Delete"..tostring(key), value)
+	       end
+	   end
+	   self.deleteLayers = message.deleteLayers
+	
+	elseif message_id == hash("ActualizeData") then
+	   updateSaveData(self)
+	
+	elseif message_id == hash("ShowTilemap") then
+       setBlackLayers(self, false)
+       -- msg.post("#tilemap", "enable")
+	   msg.post("#collision", "enable")
+	
+	elseif message_id == hash("HideTilemap") then
+       setBlackLayers(self, true)
+       -- msg.post("#tilemap", "disable")
+	   msg.post("#collision", "disable")
+	    
+	end
+end

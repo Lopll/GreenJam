@@ -1,0 +1,25 @@
+name: "M_OutlineSprite"
+tags: "tile"
+vertex_program: "/builtins/materials/sprite.vp"
+fragment_program: "/Core/FragmentPrograms/FP_OutlineSprite.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+fragment_constants {
+  name: "u_outline_settings"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.93
+    y: 1.0
+    z: 0.43
+  }
+}
+samplers {
+  name: "texture_sampler"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_NEAREST
+  max_anisotropy: 0.0
+}

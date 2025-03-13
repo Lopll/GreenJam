@@ -1,0 +1,20 @@
+go.property("puzzleID", 0)-- to send puzzle element registration
+
+function init(self)
+	if self.puzzleID ~= 0 then
+		timer.delay(0.1, false, 
+		function(self) 
+		  msg.post(PUZZLE_MANAGER, "RegisterPuzzleElement", 
+		{puzzleID = self.puzzleID, puzzleElement = msg.url(go.get_id())})
+		end)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("ProgressPuzzle") then
+		msg.post(PUZZLE_MANAGER, message_id, {puzzleID = self.puzzleID})
+	
+	elseif message_id == hash("ResetPuzzle") then
+	   msg.post(PUZZLE_MANAGER, message_id, {puzzleID = self.puzzleID})
+	end
+end

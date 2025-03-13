@@ -1,0 +1,92 @@
+animations {
+  id: "WalkDown"
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown1.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown2.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown3.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown4.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown5.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Down/SackWalkDown6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkUp"
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp1.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp2.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp3.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp4.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp5.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Up/SackWalkUp6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkRight"
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight1.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight2.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight3.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight4.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight5.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Right/SackWalkRight6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}
+animations {
+  id: "WalkLeft"
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft1.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft2.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft3.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft4.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft5.png"
+  }
+  images {
+    image: "/Characters/Player/Sack/Anim_Walk/Left/SackWalkLeft6.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 8
+}

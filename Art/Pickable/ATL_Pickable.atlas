@@ -1,0 +1,49 @@
+images {
+  image: "/Art/Pickable/Resources/inkPack_150.png"
+}
+images {
+  image: "/Art/Pickable/Resources/inkPack_50.png"
+}
+images {
+  image: "/Art/Pickable/Resources/inkPack_100.png"
+}
+images {
+  image: "/Art/Pickable/Resources/Icons/inkPack_150_Icon.png"
+}
+images {
+  image: "/Art/Pickable/Resources/Icons/inkPack_50_Icon.png"
+}
+images {
+  image: "/Art/Pickable/Resources/Icons/inkPack_100_Icon.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/Icons/tetra_icon.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/tetra.png"
+}
+images {
+  image: "/Art/Pickable/Sack.png"
+}
+images {
+  image: "/Art/Pickable/Resources/Icons/inkDrop.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/key.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/Icons/key_icon.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/gear.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/Icons/gear_icon.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/backpackUpgrade_1.png"
+}
+images {
+  image: "/Art/Pickable/Treasures/Icons/backpackUpgrade_1_icon.png"
+}
+extrude_borders: 2

@@ -1,0 +1,16 @@
+go.property("spriteName", hash(""))
+go.property("atlas", resource.atlas(""))
+go.property("autoSize", true)
+
+function init(self)
+    if self.atlas ~= hash("") then
+        go.set("#sprite", "image", self.atlas)
+    end
+    sprite.play_flipbook("#sprite", self.spriteName)
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("SetSprite") then
+        sprite.play_flipbook("#sprite", message.sprite)
+    end
+end

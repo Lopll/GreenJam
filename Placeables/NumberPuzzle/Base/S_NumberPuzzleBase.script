@@ -1,0 +1,219 @@
+-- if progress equels one of these nums, then the puzzle is solved
+go.property("solutionNumber1", 0)
+-- adddtional solution number
+go.property("solutionNumber2", 0)
+-- adddtional solution number
+go.property("solutionNumber3", 0)
+-- name of the extra door
+go.property("extraDoor1", msg.url(""))
+-- name of the extra door
+go.property("extraDoor2", msg.url(""))
+-- max "storage" capacity; if progress > it then reset
+go.property("maxProgress", 1)
+
+local parentActive = false
+local extraDoor1Active = false
+local extraDoor2Active = false
+
+-- updates progress bar level 
+local function setProgressBar(self)
+    local scaleX = self.progress/self.maxProgress
+    -- scale must be > 0
+    if scaleX == 0 then scaleX = 0.0001 end
+     
+    local scale = go.get_scale(self.progressBar)
+    scale.x = scaleX 
+    go.set_scale(scale, self.progressBar)
+    
+    -- set counter kanji
+    local kanjiScale = go.get("#counterKanji", "scale.x")
+    if self.progress > 0 then
+        sprite.play_flipbook("#counterKanji", tostring(self.progress))
+        -- show sprite
+        kanjiScale = 1
+        go.set("#counterKanji", "scale.x", kanjiScale)
+    else
+        --hide sprite
+        kanjiScale = 0
+        go.set("#counterKanji", "scale.x", kanjiScale)
+    end
+end
+
+-- sets parent's active through message
+local function setParentActive(active)
+    local parent = go.get_parent(go.get_id())
+    msg.post(parent, "SetActive", {active = active})
+end
+
+function init(self)
+    self.progress = 0
+    
+    -- set appropriate spriteы
+    if self.solutionNumber1 ~= 0 then
+        sprite.play_flipbook("#kanji1", tostring(self.solutionNumber1))
+    else
+        msg.post("#kanji1", "disable")
+    end
+    if self.solutionNumber2 ~= 0 then
+        sprite.play_flipbook("#kanji2", tostring(self.solutionNumber2))
+    else
+        msg.post("#kanji2", "disable")
+    end
+    if self.solutionNumber3 ~= 0 then
+        sprite.play_flipbook("#kanji3", tostring(self.solutionNumber3))
+    else
+        msg.post("#kanji3", "disable")
+    end
+    
+    --deactivate parent
+    setParentActive(false)
+    -- extra door case
+    if self.extraDoor1 ~= msg.url("") then
+        msg.post(self.extraDoor1, "SetActive", {active = false})
+    end
+    if self.extraDoor2 ~= msg.url("") then
+        msg.post(self.extraDoor2, "SetActive", {active = false})
+        extraDoor2Active = false
+    end
+    
+end
+
+-- adds/updates save data in  world manager's table of saved objects 
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData",
+    {url = msg.url(go.get_id()),
+    data = {
+    progress = self.progress
+    }})
+end
+
+-- add progress to self progress and updates progressBar
+local function progressPuzzle(self, progress)
+    self.progress = self.progress + progress
+    -- solved
+    if self.progress == self.solutionNumber1 then
+        msg.post("#PuzzleElement", "ProgressPuzzle")
+        setProgressBar(self)
+        
+        setParentActive(true)
+        parentActive = true
+        
+        -- deactivate extra  door in case if it is active
+        if extraDoor1Active and self.extraDoor1 ~= nil then
+            msg.post(self.extraDoor1, "SetActive", {active = false})
+            extraDoor1Active = false
+        end
+        if extraDoor2Active and self.extraDoor2 ~= nil then
+            msg.post(self.extraDoor2, "SetActive", {active = false})
+            extraDoor2Active = false
+        end
+        
+        -- activate lamp, if has some
+        if self.lamp ~= nil then
+            msg.post(self.lamp, "Activate", {color = "GREEN"})
+        end
+        
+    elseif self.progress == self.solutionNumber2 then
+        msg.post("#PuzzleElement", "ProgressPuzzle")
+        setProgressBar(self)
+        -- deactivate main door in case if it is active
+        if parentActive then
+            setParentActive(false)
+            parentActive = false
+        end
+        -- set extra door active
+        if self.extraDoor1 ~= nil then
+            msg.post(self.extraDoor1, "SetActive", {active = true})
+            extraDoor1Active = true
+        end
+        if extraDoor2Active and self.extraDoor2 ~= nil then
+            msg.post(self.extraDoor2, "SetActive", {active = false})
+            extraDoor2Active = false
+        end
+        
+        -- activate lamp, if has some
+        if self.lamp ~= nil then
+            msg.post(self.lamp, "Activate", {color = "GREEN"})
+        end
+        
+    elseif self.progress == self.solutionNumber3 then
+        msg.post("#PuzzleElement", "ProgressPuzzle")
+        setProgressBar(self)
+        -- deactivate main door in case if it is active
+        if parentActive then
+            setParentActive(false)
+            parentActive = false
+        end
+        -- set extra door active
+        if extraDoor1Active and self.extraDoor1 ~= nil then
+            msg.post(self.extraDoor1, "SetActive", {active = false})
+            extraDoor1Active = false
+        end
+        if self.extraDoor2 ~= nil then
+            msg.post(self.extraDoor2, "SetActive", {active = true})
+            extraDoor2Active = true
+        end
+        
+        -- activate lamp, if has some
+        if self.lamp ~= nil then
+            msg.post(self.lamp, "Activate", {color = "GREEN"})
+        end
+        
+    -- too much
+    elseif self.progress > self.maxProgress then
+        self.progress = 0
+        setProgressBar(self)
+        -- in case. if we add more nums after solving
+        if parentActive then
+            setParentActive(false)
+            parentActive = false
+        end
+        -- extra door case
+        if extraDoor1Active and self.extraDoor1 ~= nil then
+            msg.post(self.extraDoor1, "SetActive", {active = false})
+            extraDoor1Active = false
+        end
+        if extraDoor2Active and self.extraDoor2 ~= nil then
+            msg.post(self.extraDoor2, "SetActive", {active = false})
+            extraDoor2Active = false
+        end
+        
+        -- activate lamp, if has some
+        if self.lamp ~= nil then
+            msg.post(self.lamp, "Activate", {color = "RED"})
+        end
+        
+    -- not enough
+    else
+        setProgressBar(self)
+        -- deactivate both doors
+        if parentActive then
+            setParentActive(false)
+            parentActive = false
+        end
+        -- extra door case
+        if extraDoor1Active and self.extraDoor1 ~= nil then
+            msg.post(self.extraDoor1, "SetActive", {active = false})
+            extraDoor1Active = false
+        end
+        if extraDoor2Active and self.extraDoor2 ~= nil then
+            msg.post(self.extraDoor2, "SetActive", {active = false})
+            extraDoor2Active = false
+        end
+        
+    end
+    updateSaveData(self)
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("ProgressPuzzle") or  message_id == hash("LoadData") then
+        progressPuzzle(self, message.progress)
+    elseif message_id == hash("RegisterProgressBar") then
+        self.progressBar = sender
+        setProgressBar(self)
+    
+    elseif message_id == hash("RegisterLamp") then
+        self.lamp = sender.path
+    
+    end
+end

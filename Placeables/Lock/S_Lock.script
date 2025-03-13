@@ -1,0 +1,40 @@
+go.property("keyName", hash(""))
+
+-- sets parent's active through message
+local function setParentActive(active)
+    local parent = go.get_parent(go.get_id())
+    msg.post(parent, "SetActive", {active = active})
+    msg.post(parent, "RegisterAsInteractable", {triggerActive = false})
+end
+
+function init(self)
+	setParentActive(false)
+end
+
+local keyInventoryId
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Interaction") then
+	   if keyInventoryId ~= nil then
+	       setParentActive(true)
+	       
+	       -- delete key
+	       msg.post(INVENTORY, "RemoveItem", {cellNumber = keyInventoryId})
+	       -- delete self as interactable
+	       msg.post("#WorldElement", "setTriggerActive", {triggerActive = false})
+	       
+	       
+	       go.delete()
+	   else
+	       -- send notification 
+	       msg.post(HUD, "ShowNotification", {text = TEXTS.reqNotif .. string.lower(ITEM_DB.getItem(self.keyName).label)})
+	   end
+	elseif message_id == hash("trigger_response") then
+	   if message.enter then
+	       -- check wether player has a key or not
+	       msg.post(INVENTORY, "GetItemId", {itemName = self.keyName})
+	   end
+	elseif message_id == hash("ReceiveItemId") then
+	   keyInventoryId = message.itemId 
+	end
+end

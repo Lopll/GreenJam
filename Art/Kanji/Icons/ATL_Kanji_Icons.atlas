@@ -1,0 +1,52 @@
+images {
+  image: "/Art/Kanji/Icons/5.png"
+}
+images {
+  image: "/Art/Kanji/Icons/4.png"
+}
+images {
+  image: "/Art/Kanji/Icons/Moon.png"
+}
+images {
+  image: "/Art/Kanji/Icons/1.png"
+}
+images {
+  image: "/Art/Kanji/Icons/Sun.png"
+}
+images {
+  image: "/Art/Kanji/Icons/2.png"
+}
+images {
+  image: "/Art/Kanji/Icons/Yen.png"
+}
+images {
+  image: "/Art/Kanji/Icons/3.png"
+}
+images {
+  image: "/Art/Kanji/Icons/6.png"
+}
+images {
+  image: "/Art/Kanji/Icons/7.png"
+}
+images {
+  image: "/Art/Kanji/Icons/8.png"
+}
+images {
+  image: "/Art/Kanji/Icons/9.png"
+}
+images {
+  image: "/Art/Kanji/Icons/10.png"
+}
+images {
+  image: "/Art/Kanji/Icons/10K.png"
+}
+images {
+  image: "/Art/Kanji/Icons/100.png"
+}
+images {
+  image: "/Art/Kanji/Icons/1K.png"
+}
+images {
+  image: "/Art/Kanji/Icons/Year.png"
+}
+extrude_borders: 2

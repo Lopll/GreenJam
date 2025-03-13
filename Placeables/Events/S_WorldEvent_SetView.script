@@ -1,0 +1,12 @@
+go.property("viewName", hash("Sun"))
+
+function init(self)
+	self.currentAlpha = 1 
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		msg.post("/PlayerCollection/GUI_GO#View", "ChangeView", {view = self.viewName})
+	end
+end
+

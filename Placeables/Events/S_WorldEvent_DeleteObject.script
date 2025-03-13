@@ -1,0 +1,14 @@
+go.property("objectToDelete", msg.url())
+-- in some cases we need to do some thing before deleting objects
+-- that's why we should have an option of deleting through message
+go.property("messageDelete", false)
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		if self.messageDelete then
+			msg.post(self.objectToDelete, "Delete")
+		else
+			go.delete(self.objectToDelete)
+		end
+	end
+end

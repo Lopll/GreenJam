@@ -1,0 +1,16 @@
+go.property("sellTreasure", false)
+go.property("sellReasource", false)
+go.property("sellPowerUp", false)
+
+local sellableCategories = {}
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+	   -- if we can sell categorie, we add it to the table
+		if self.sellTreasure then table.insert(sellableCategories, ITEM_CATEGORIE.TREASURE) end
+		if self.sellReasource then table.insert(sellableCategories, ITEM_CATEGORIE.RESOURCE) end
+		if self.sellPowerUp then table.insert(sellableCategories, ITEM_CATEGORIE.POWER_UP) end
+		
+		msg.post(INVENTORY, "ToggleAlpha", {sellableCategories = sellableCategories})
+	end
+end

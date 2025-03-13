@@ -1,0 +1,15 @@
+local SaveLoad = require "LuaModules.SaveLoad"
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Interaction") then
+        msg.post(SCENE_MANAGER, "PlaySound", {sound = SOUNDS.save})
+        msg.post(PLAYER_URL, "SaveData", {playerSavePosition = go.get_position()})
+        msg.post(WORLD_MANAGER, "SaveWorld")
+        msg.post(SCENE_MANAGER, "SaveData")
+        SaveLoad.nextSlot()
+        
+        -- show notification
+        msg.post(HUD, "ShowNotification", {text = TEXTS.saveNotif}) 
+        
+    end
+end

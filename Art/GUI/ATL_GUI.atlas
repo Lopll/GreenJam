@@ -1,0 +1,147 @@
+images {
+  image: "/Art/GUI/Button.png"
+}
+images {
+  image: "/Art/GUI/Dialogues/DialogueOption.png"
+}
+images {
+  image: "/Art/GUI/Dialogues/DialoguePhrase.png"
+}
+images {
+  image: "/Art/GUI/Handwriting/WritingZone.png"
+}
+images {
+  image: "/Art/GUI/Handwriting/WritingZoneDifficult.png"
+}
+images {
+  image: "/Art/GUI/Icons/DiaryIcon.png"
+}
+images {
+  image: "/Art/GUI/Icons/KanjiPointIcon.png"
+}
+images {
+  image: "/Art/GUI/Icons/KeyIcon.png"
+}
+images {
+  image: "/Art/GUI/Icons/PowerUpIcon.png"
+}
+images {
+  image: "/Art/GUI/Icons/TreasureIcon.png"
+}
+images {
+  image: "/Art/GUI/InteractionButton.png"
+}
+images {
+  image: "/Art/GUI/Inkwell/InkwellBody.png"
+}
+images {
+  image: "/Art/GUI/PauseMenu.png"
+}
+images {
+  image: "/Art/GUI/CheckBox/CheckBox.png"
+}
+images {
+  image: "/Art/GUI/CheckBox/Check.png"
+}
+images {
+  image: "/Art/GUI/Slider/SliderBar.png"
+}
+images {
+  image: "/Art/GUI/Slider/SliderButton.png"
+}
+images {
+  image: "/Art/GUI/Scroll.png"
+}
+images {
+  image: "/Art/GUI/Inventory/InventoryButton.png"
+}
+images {
+  image: "/Art/GUI/Inventory/InventoryCell.png"
+}
+images {
+  image: "/Art/GUI/Inventory/InventoryContentBackground.png"
+}
+images {
+  image: "/Art/GUI/Inventory/InventoryBackground.png"
+}
+images {
+  image: "/Art/GUI/Handwriting/HandwritingBackground.png"
+}
+images {
+  image: "/Art/Pickable/Resources/inkPack_50.png"
+}
+images {
+  image: "/Art/GUI/Inkwell/InkwellBody25.png"
+}
+images {
+  image: "/Art/GUI/Inkwell/InkwellBody50.png"
+}
+images {
+  image: "/Art/GUI/Inkwell/InkwellBody75.png"
+}
+images {
+  image: "/Art/GUI/Inkwell/InkwellBody100.png"
+}
+images {
+  image: "/Art/Kanji/Forms/1.png"
+}
+images {
+  image: "/Art/Kanji/Forms/1K.png"
+}
+images {
+  image: "/Art/Kanji/Forms/2.png"
+}
+images {
+  image: "/Art/Kanji/Forms/3.png"
+}
+images {
+  image: "/Art/Kanji/Forms/4.png"
+}
+images {
+  image: "/Art/Kanji/Forms/5.png"
+}
+images {
+  image: "/Art/Kanji/Forms/6.png"
+}
+images {
+  image: "/Art/Kanji/Forms/7.png"
+}
+images {
+  image: "/Art/Kanji/Forms/8.png"
+}
+images {
+  image: "/Art/Kanji/Forms/9.png"
+}
+images {
+  image: "/Art/Kanji/Forms/10.png"
+}
+images {
+  image: "/Art/Kanji/Forms/10K.png"
+}
+images {
+  image: "/Art/Kanji/Forms/100.png"
+}
+images {
+  image: "/Art/Kanji/Forms/Year.png"
+}
+images {
+  image: "/Art/Kanji/Forms/Yen.png"
+}
+animations {
+  id: "Blink"
+  images {
+    image: "/Art/GUI/Blink/Blink1.png"
+  }
+  images {
+    image: "/Art/GUI/Blink/Blink2.png"
+  }
+  images {
+    image: "/Art/GUI/Blink/Blink3.png"
+  }
+  images {
+    image: "/Art/GUI/Blink/Blink4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2

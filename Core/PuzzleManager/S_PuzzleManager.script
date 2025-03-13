@@ -1,0 +1,32 @@
+
+
+function init(self)
+    -- list of all puzzles with table of puzzle elements
+    self.puzzles = {}
+    
+    -- progress of all puzzles
+    self.puzzleProggresses = {}
+    
+    PUZZLE_MANAGER = msg.url()
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("RegisterPuzzleElement") then
+        if self.puzzles[message.puzzleID] == nil then
+            self.puzzles[message.puzzleID] = {}
+            self.puzzleProggresses[message.puzzleID] = 0
+        end
+        table.insert(self.puzzles[message.puzzleID], message.puzzleElement)
+    elseif message_id == hash("ProgressPuzzle") and self.puzzleProggresses[message.puzzleID] ~= nil then
+        self.puzzleProggresses[message.puzzleID] = self.puzzleProggresses[message.puzzleID] + 1
+        --print("Puzzle test accepted, current progress = " .. tostring(self.puzzleProggresses[message.puzzleID]))
+        --print("Sent from :" .. tostring(sender))
+        if self.puzzleProggresses[message.puzzleID] == #self.puzzles[message.puzzleID] then
+            for key, value in pairs(self.puzzles[message.puzzleID]) do
+                msg.post(value, "PuzzleSolved")
+            end
+        end
+    elseif message_id == hash("ResetPuzzle") then
+        self.puzzleProggresses[message.puzzleID] = self.puzzleProggresses[message.puzzleID] - 1
+    end
+end

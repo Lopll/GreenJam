@@ -1,0 +1,26 @@
+local SaveLoad = require "LuaModules.SaveLoad"
+
+-- number of world that we want to load
+go.property("worldNum", 1)
+-- position of the player in the new world
+go.property("playerSavePosition", vmath.vector3(0, 0, 0))
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+	   msg.post(SCENE_MANAGER, "PlaySound", {sound = SOUNDS.levelChange})
+	   -- save current progress
+	   msg.post(PLAYER_URL, "SaveData", {playerSavePosition = self.playerSavePosition})
+	   msg.post(WORLD_MANAGER, "SaveWorld")
+	   msg.post(SCENE_MANAGER, "SaveData")
+	   -- show save notification
+	   msg.post(HUD, "ShowNotification", {text = TEXTS.saveNotif}) 
+	   
+	   SaveLoad.nextSlot()
+	   
+	   timer.delay(0.2, false, 
+	   function() 
+	       -- change world
+	       msg.post(SCENE_MANAGER, "ChangeWorld", {worldNum = self.worldNum})
+	   end)
+	end
+end

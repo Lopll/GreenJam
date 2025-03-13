@@ -1,0 +1,12 @@
+images {
+  image: "/Characters/Pchel/Pchel.png"
+}
+animations {
+  id: "IDLE"
+  images {
+    image: "/Characters/Pchel/Pchel.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+}
+extrude_borders: 2

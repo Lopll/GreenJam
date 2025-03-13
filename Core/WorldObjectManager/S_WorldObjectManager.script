@@ -1,0 +1,62 @@
+local AdditionalTable = require "LuaModules.AdditionalTable"
+local SaveLoad = require "LuaModules.SaveLoad"
+
+go.property("worldNumber", 0)
+
+WORLD_MANAGER = msg.url()
+
+local savedData = {}
+local unsavedData = {} -- object URL + type
+
+function init(self)
+	WORLD_MANAGER = msg.url()
+	
+	msg.post(".", "LoadData")
+end
+
+local function sendMessageToObjects(message_id)
+    for key,value in pairs(unsavedData) do
+        -- check if still exists
+        if pcall(go.get, value.url ,"position") then
+            msg.post(value.url, message_id, savedData[key])
+        end
+    end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("ChangeData") then
+	   local id = hash_to_hex(hash(tostring(message.url))) 
+	   savedData[id] = message.data
+	   unsavedData[id] = {url = message.url, type = message.type}
+	   
+	elseif message_id == hash("SaveWorld") then
+       SaveLoad.saveData("World"..tostring(self.worldNumber), {objects = unsavedData, data = savedData})
+    
+    -- requesting saved data
+    elseif message_id == hash("LoadData") then
+        local save = SaveLoad.loadData("World"..tostring(self.worldNumber))
+        if save ~= 0 then
+            savedData = save.data
+            unsavedData = save.objects
+            sendMessageToObjects("LoadData")
+        end
+        
+    elseif message_id == hash("ActualizeData") then
+        sendMessageToObjects(message_id)
+    
+    elseif message_id == hash("DeleteData") then
+        -- find object ID
+        local objectID = nil
+        for key, value in pairs(unsavedData) do
+        --print(AdditionalTable.findElement(value, message.url))
+            if AdditionalTable.findElement(value, message.url) then
+                objectID = key
+            end
+        end
+        savedData[objectID] = nil
+	end
+end
+
+function final(self)
+	
+end

@@ -1,0 +1,80 @@
+key_trigger {
+  input: KEY_W
+  action: "WalkUp"
+}
+key_trigger {
+  input: KEY_A
+  action: "WalkLeft"
+}
+key_trigger {
+  input: KEY_S
+  action: "WalkDown"
+}
+key_trigger {
+  input: KEY_D
+  action: "WalkRight"
+}
+key_trigger {
+  input: KEY_1
+  action: "CollisionON"
+}
+key_trigger {
+  input: KEY_2
+  action: "CollisionOFF"
+}
+key_trigger {
+  input: KEY_E
+  action: "Interaction"
+}
+key_trigger {
+  input: KEY_I
+  action: "Inventory"
+}
+key_trigger {
+  input: KEY_ESC
+  action: "Menu"
+}
+key_trigger {
+  input: KEY_LSHIFT
+  action: "Sprint"
+}
+key_trigger {
+  input: KEY_RIGHT
+  action: "WalkRight"
+}
+key_trigger {
+  input: KEY_DOWN
+  action: "WalkDown"
+}
+key_trigger {
+  input: KEY_LEFT
+  action: "WalkLeft"
+}
+key_trigger {
+  input: KEY_UP
+  action: "WalkUp"
+}
+key_trigger {
+  input: KEY_3
+  action: "RestoreInk"
+}
+key_trigger {
+  input: KEY_TAB
+  action: "Inventory"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "Touch"
+}
+mouse_trigger {
+  input: MOUSE_WHEEL_UP
+  action: "WheelUp"
+}
+mouse_trigger {
+  input: MOUSE_WHEEL_DOWN
+  action: "WheelDown"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_RIGHT
+  action: "Inventory"
+}

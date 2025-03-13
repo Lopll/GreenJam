@@ -1,0 +1,503 @@
+animations {
+  id: "1"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1/OneAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "2"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/2/TwoAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "3"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/3/ThreeAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "Sun"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Sun/SunAnim4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
+}
+animations {
+  id: "Moon"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Moon/MoonAnim4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
+}
+animations {
+  id: "4"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/4/FourAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "5"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/5/FiveAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "6"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/6/SixAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "7"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/7/SevenAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "Yen"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Yen/YenAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "8"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim1.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim2.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim3.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim4.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/8/EightAnim1.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "10"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0005.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0009.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0012.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0016.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0019.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0019.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0019.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10/Timeline 1_0000.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 9
+}
+animations {
+  id: "9"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/9.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0004.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0008.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0012.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0016.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0020.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/9/9.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 11
+}
+animations {
+  id: "100"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0002.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0006.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0010.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0014.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0017.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0019.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0022.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0022.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0022.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/100/Timeline 1_0000.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 11
+}
+animations {
+  id: "1K"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0003.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0005.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0009.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0011.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0014.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0017.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0019.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0021.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0021.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0021.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/1K/Timeline 1_0000.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "10K"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0004.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0007.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0011.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0014.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0017.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0020.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0020.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0020.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/10K/Timeline 1_0000.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "Year"
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0000.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0004.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0008.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0012.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0015.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0018.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0021.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0023.png"
+  }
+  images {
+    image: "/Art/Kanji/MeaningAnimations/Year/Timeline 1_0000.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 11
+}
+extrude_borders: 2
