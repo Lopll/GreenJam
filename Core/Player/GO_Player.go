@@ -34,6 +34,7 @@ embedded_components {
   "mask: \"tilemapWall\"\n"
   "mask: \"trigger\"\n"
   "mask: \"triggerZ\"\n"
+  "mask: \"movingWall\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

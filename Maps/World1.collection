@@ -20,15 +20,20 @@ instances {
   prototype: "/JamContent/Core/GO_BasicMovingObject.go"
   children: "GO_BasicDestPoint"
   position {
-    x: -33.0
-    y: 97.0
+    x: -343.0
+    y: 790.0
   }
   component_properties {
     id: "S_MovingObject"
     properties {
       id: "animTime"
-      value: "0.1"
+      value: "0.5"
       type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
     }
   }
 }
@@ -36,16 +41,174 @@ instances {
   id: "GO_BasicDestPoint"
   prototype: "/JamContent/Core/GO_BasicDestPoint.go"
   position {
-    x: 110.0
-    y: 56.0
+    x: 605.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicMovingObject1"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint1"
+  position {
+    x: -305.0
+    y: 752.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.4"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint1"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: 605.0
+    y: -10.0
+  }
+}
+instances {
+  id: "WE_SetCheckPoint"
+  prototype: "/JamContent/Core/WE_SetCheckPoint.go"
+  position {
+    x: 5.0
+    y: 689.0
+  }
+}
+instances {
+  id: "GO_BasicMovingObject2"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint2"
+  position {
+    x: -376.0
+    y: 773.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.5"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint2"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: 605.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicMovingObject3"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint3"
+  position {
+    x: 390.0
+    y: 861.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.5"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject4"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint4"
+  position {
+    x: 447.0
+    y: 831.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.4"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject5"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint5"
+  position {
+    x: 307.0
+    y: 845.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.5"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint3"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -726.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicDestPoint4"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -726.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicDestPoint5"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -726.0
+    y: -10.0
   }
 }
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: 84.0
-    y: 64.0
+    x: 25.0
+    y: 582.0
   }
 }
 scale_along_z: 0

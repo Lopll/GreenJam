@@ -21,6 +21,8 @@ local devMode = false
 
 local currentWorldSpeed = 1
 
+local checkPoint
+
 function init(self)
     PLAYER_URL = msg.url()
 	msg.post(".", "acquire_input_focus")
@@ -256,6 +258,13 @@ function on_message(self, message_id, message, sender)
 	    -- release input focus
         msg.post(".", "release_input_focus")
 	
+	elseif message_id == hash("SetCheckpoint") then
+		checkPoint = message.point
+	
+	elseif message_id == hash("collision_response") then
+		if message.other_group == hash("movingWall") and checkPoint ~= nil then
+			go.set_position(checkPoint)
+		end
 	end
 end
 

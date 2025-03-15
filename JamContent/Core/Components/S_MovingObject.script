@@ -1,7 +1,6 @@
 go.property("animTime", 6)
 go.property("easing", hash(""))
-
-local speed = 100
+go.property("teleportOnReach", false)
 
 local function defineEasing(self)
 	if self.easing == hash("OUTBOUNCE") then
@@ -20,13 +19,27 @@ end
 function init(self)
 	self.dest = nil
 	self.easingMode = go.EASING_LINEAR
+	self.startPos = go.get_position()
 	defineEasing(self)
+end
+
+local function onReach(self)
+	go.set_position(self.startPos)
+	go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, self.dest, self.easingMode, self.animTime, 0, onReach)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("RegisterDestinationPoint") then
-		self.dest = message.dest
+		self.dest = message.dest + self.startPos
 		
-		go.animate(".", "position", go.PLAYBACK_LOOP_PINGPONG, self.dest, self.easingMode, self.animTime)
+		local looping = go.PLAYBACK_LOOP_PINGPONG
+		local endFunc = nil
+		
+		if self.teleportOnReach then
+			looping = go.PLAYBACK_ONCE_FORWARD
+			endFunc = onReach
+		end
+		
+		go.animate(".", "position", looping, self.dest, self.easingMode, self.animTime, 0, endFunc)
 	end
 end

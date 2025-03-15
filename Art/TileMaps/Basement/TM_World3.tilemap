@@ -92077,11 +92077,6 @@ layers {
     tile: 422
   }
   cell {
-    x: -3
-    y: 25
-    tile: 422
-  }
-  cell {
     x: 74
     y: 27
     tile: 422
