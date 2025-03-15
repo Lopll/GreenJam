@@ -92431,6 +92431,26 @@ layers {
     y: 35
     tile: 422
   }
+  cell {
+    x: 69
+    y: 100
+    tile: 194
+  }
+  cell {
+    x: 69
+    y: 101
+    tile: 195
+  }
+  cell {
+    x: 69
+    y: 102
+    tile: 168
+  }
+  cell {
+    x: 69
+    y: 103
+    tile: 166
+  }
 }
 layers {
   id: "WallUp"

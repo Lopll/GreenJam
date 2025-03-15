@@ -1,0 +1,24 @@
+go.property("toggleInterval", 1)
+
+local function toggleObstacle(self)
+    if self.obstacles[self.currentGroup] ~= nil then
+        msg.post(self.obstacles[self.currentGroup], "SetCollision", {collision = true})
+        print(self.currentGroup)
+        self.currentGroup = ((self.currentGroup + 1) % (#self.obstacles+1))
+        print(self.currentGroup)
+        msg.post(self.obstacles[self.currentGroup], "SetCollision", {collision = false})
+    end
+end
+
+function init(self)
+    self.obstacles = {}
+    self.currentGroup = 0
+    
+    timer.delay(self.toggleInterval, true, toggleObstacle)
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("RegisterObstacle") then
+        table.insert(self.obstacles, message.group, sender)
+    end
+end

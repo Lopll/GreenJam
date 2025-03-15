@@ -28,4 +28,7 @@ images {
 images {
   image: "/JamContent/Art/GGAD.png"
 }
+images {
+  image: "/JamContent/Art/Objects/Obstacle.png"
+}
 extrude_borders: 2

@@ -2133,12 +2133,54 @@ instances {
     y: -7.0
   }
 }
+instances {
+  id: "GO_Obstacle"
+  prototype: "/JamContent/Core/GO_Obstacle.go"
+  position {
+    y: 101.0
+  }
+}
+instances {
+  id: "GO_Obstacle1"
+  prototype: "/JamContent/Core/GO_Obstacle.go"
+  position {
+    y: -81.0
+  }
+  component_properties {
+    id: "S_ObstacleComp"
+    properties {
+      id: "obstacleGroup"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_Obstacle2"
+  prototype: "/JamContent/Core/GO_Obstacle.go"
+  position {
+    x: -90.0
+    y: 9.0
+  }
+  rotation {
+    z: 0.70710677
+    w: 0.70710677
+  }
+  component_properties {
+    id: "S_ObstacleComp"
+    properties {
+      id: "obstacleGroup"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: 1.0
-    y: 873.0
+    x: 790.0
+    y: 1622.0
   }
 }
 scale_along_z: 0
@@ -2711,5 +2753,20 @@ embedded_instances {
   rotation {
     z: 0.7092008
     w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "Obstacles1"
+  children: "GO_Obstacle"
+  children: "GO_Obstacle1"
+  children: "GO_Obstacle2"
+  data: "components {\n"
+  "  id: \"S_ObstacleManager\"\n"
+  "  component: \"/JamContent/Core/S_ObstacleManager.script\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1031.0
+    y: 1599.0
   }
 }
