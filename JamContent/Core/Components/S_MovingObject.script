@@ -9,8 +9,12 @@ local function defineEasing(self)
 		self.easingMode = go.EASING_OUTINBACK
 	elseif self.easing == hash("OUTINELASTIC") then
 		self.easingMode = go.EASING_OUTINELASTIC
+	elseif self.easing == hash("INOUTELASTIC") then
+		self.easingMode = go.EASING_INOUTELASTIC
 	elseif self.easing == hash("OUTINEXPO") then
 		self.easingMode = go.EASING_OUTINEXPO
+	elseif self.easing == hash("INSIN") then
+		self.easingMode = go.EASING_INSIN
 	else
 		self.easingMode = go.EASING_LINEAR
 	end

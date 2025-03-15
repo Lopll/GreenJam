@@ -3,9 +3,7 @@ go.property("toggleInterval", 1)
 local function toggleObstacle(self)
     if self.obstacles[self.currentGroup] ~= nil then
         msg.post(self.obstacles[self.currentGroup], "SetCollision", {collision = true})
-        print(self.currentGroup)
         self.currentGroup = ((self.currentGroup + 1) % (#self.obstacles+1))
-        print(self.currentGroup)
         msg.post(self.obstacles[self.currentGroup], "SetCollision", {collision = false})
     end
 end
