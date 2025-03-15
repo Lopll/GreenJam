@@ -1,0 +1,28 @@
+images {
+  image: "/JamContent/Art/Objects/GreenCarHor.png"
+}
+images {
+  image: "/JamContent/Art/Objects/GreenCarVertDown.png"
+}
+images {
+  image: "/JamContent/Art/Objects/GreenCarVertUp.png"
+}
+images {
+  image: "/JamContent/Art/Objects/RedCarHor.png"
+}
+images {
+  image: "/JamContent/Art/Objects/RedCarVertDown.png"
+}
+images {
+  image: "/JamContent/Art/Objects/RedCarVertUp.png"
+}
+images {
+  image: "/JamContent/Art/Objects/TaxiHor.png"
+}
+images {
+  image: "/JamContent/Art/Objects/TaxiVertDown.png"
+}
+images {
+  image: "/JamContent/Art/Objects/TaxiVertUp.png"
+}
+extrude_borders: 2

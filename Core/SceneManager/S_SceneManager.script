@@ -138,5 +138,7 @@ function on_message(self, message_id, message, sender)
 	   sound.play("#brushSound")
 	elseif message_id == hash("StopBrushSound") then
 	   sound.stop("#brushSound")
+	elseif message_id == hash("SetWorldSpeed") then
+	   msg.post(currentWorld, "set_time_step", {factor = message.worldSpeed, mode = 0})
     end
 end

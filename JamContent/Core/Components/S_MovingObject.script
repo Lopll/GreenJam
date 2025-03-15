@@ -1,0 +1,32 @@
+go.property("animTime", 6)
+go.property("easing", hash(""))
+
+local speed = 100
+
+local function defineEasing(self)
+	if self.easing == hash("OUTBOUNCE") then
+		self.easingMode = go.EASING_OUTBOUNCE
+	elseif self.easing == hash("OUTINBACK") then
+		self.easingMode = go.EASING_OUTINBACK
+	elseif self.easing == hash("OUTINELASTIC") then
+		self.easingMode = go.EASING_OUTINELASTIC
+	elseif self.easing == hash("OUTINEXPO") then
+		self.easingMode = go.EASING_OUTINEXPO
+	else
+		self.easingMode = go.EASING_LINEAR
+	end
+end
+
+function init(self)
+	self.dest = nil
+	self.easingMode = go.EASING_LINEAR
+	defineEasing(self)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("RegisterDestinationPoint") then
+		self.dest = message.dest
+		
+		go.animate(".", "position", go.PLAYBACK_LOOP_PINGPONG, self.dest, self.easingMode, self.animTime)
+	end
+end

@@ -2,6 +2,7 @@ name: "PlayerCollection"
 instances {
   id: "GO_Player"
   prototype: "/Core/Player/GO_Player.go"
+  children: "GO_DynamicTextComp"
 }
 instances {
   id: "camera"
@@ -20,7 +21,7 @@ instances {
     }
     properties {
       id: "zoom"
-      value: "2.25"
+      value: "3.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -49,6 +50,11 @@ instances {
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
+      id: "follow_offset"
+      value: "0.0, 15.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
       id: "deadzone_left"
       value: "2.0"
       type: PROPERTY_TYPE_NUMBER
@@ -68,6 +74,14 @@ instances {
       value: "2.0"
       type: PROPERTY_TYPE_NUMBER
     }
+  }
+}
+instances {
+  id: "GO_DynamicTextComp"
+  prototype: "/JamContent/Core/Components/DynamicText/GO_DynamicTextComp.go"
+  position {
+    x: 165.0
+    y: -25.0
   }
 }
 scale_along_z: 0

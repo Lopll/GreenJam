@@ -16,11 +16,11 @@ key_trigger {
 }
 key_trigger {
   input: KEY_1
-  action: "CollisionON"
+  action: "Speed1"
 }
 key_trigger {
   input: KEY_2
-  action: "CollisionOFF"
+  action: "Speed2"
 }
 key_trigger {
   input: KEY_E
@@ -56,11 +56,15 @@ key_trigger {
 }
 key_trigger {
   input: KEY_3
-  action: "RestoreInk"
+  action: "Speed3"
 }
 key_trigger {
   input: KEY_TAB
   action: "Inventory"
+}
+key_trigger {
+  input: KEY_4
+  action: "Speed4"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT

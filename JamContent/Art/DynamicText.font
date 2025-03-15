@@ -1,0 +1,7 @@
+font: "/Art/Fonts/Comic Sans MS Pixel.ttf"
+material: "/builtins/fonts/font.material"
+size: 16
+antialias: 0
+shadow_blur: 0
+all_chars: true
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

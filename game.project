@@ -13,7 +13,7 @@ main_collection = /main/main.collectionc
 render = /orthographic/render/orthographic.renderc
 
 [input]
-game_binding = /Core/game.input_bindingc
+game_binding = /JamContent/game.input_bindingc
 use_accelerometer = 0
 repeat_interval = 0.0
 repeat_delay = 0.0

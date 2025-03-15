@@ -1,0 +1,3 @@
+function init(self)
+    msg.post(go.get_parent(go.get_id()), "RegisterDestinationPoint", {dest = go.get_position()})
+end

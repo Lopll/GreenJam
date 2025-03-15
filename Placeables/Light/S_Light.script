@@ -1,0 +1,66 @@
+go.property("kanji", hash("Sun"))
+go.property("save", true)
+
+LIGHT_TYPE = "Light"
+
+-- updates or creates save data in object manager
+local function updateSaveData(self)
+    msg.post(WORLD_MANAGER, "ChangeData", 
+    {url = msg.url(go.get_id()),
+    type = LIGHT_TYPE,
+    data = {
+    position = go.get_position(),
+    rotation = go.get_rotation(),
+    scale = go.get_scale()   
+    }})
+end
+
+function init(self)
+	sprite.play_flipbook("#sprite", LIGHT_TYPE..tostring(self.kanji))
+
+	self.lightSensor = nil
+
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("GetKanji") then
+		msg.post(sender, message_id, {kanji = self.kanji})
+		
+	elseif message_id == hash("Delete") then
+		if self.lightSensor ~= nil then
+			msg.post(self.lightSensor, "LightDeleted", {other_id = go.get_id(), enter = false})
+		end
+		
+		-- register as monitored and mark light as deleted
+		timer.delay(0.05, false, updateSaveData)
+		timer.delay(0.1, false, 
+		function()
+		msg.post(WORLD_MANAGER, "DeleteData", {url = msg.url(go.get_id())})
+		end)
+		
+		timer.delay(0.5, false, function() go.delete() end)
+		
+	elseif message_id == hash("trigger_response") then
+		self.lightSensor = message.other_id
+		
+	elseif message_id == hash("SetKanji") then
+		self.kanji = message.kanji
+		sprite.play_flipbook("#sprite", self.kanji)
+	elseif message_id == hash("SetParent") then
+		self.parent = message.parent
+	
+	elseif message_id == hash("LoadData") then
+	   if message.position == nil then
+	       --msg.post("#sprite", "disable")
+	       timer.delay(0.1, false, function() msg.post("#", "Delete") end)
+	   else
+	       go.set_position(message.position)
+	       go.set_rotation(message.rotation)
+	       go.set_scale(message.scale)
+	   end
+	elseif message_id == hash("ActualizeData") then
+	   updateSaveData(self)
+	
+	end
+end
+

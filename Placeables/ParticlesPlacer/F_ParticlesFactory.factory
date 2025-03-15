@@ -1,3 +1,0 @@
-prototype: "/Core/Particle/GO_Particle.go"
-load_dynamically: false
-dynamic_prototype: false

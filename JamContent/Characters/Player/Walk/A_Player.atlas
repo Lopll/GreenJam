@@ -1,0 +1,70 @@
+animations {
+  id: "WalkDown"
+  images {
+    image: "/JamContent/Characters/Player/Walk/Down/PchelWalkDown1.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Down/PchelWalkDown2.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Down/PchelWalkDown3.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Down/PchelWalkDown4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "WalkRight"
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight1.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight2.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight3.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "WalkUp"
+  images {
+    image: "/JamContent/Characters/Player/Walk/Up/PchelWalkUp1.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Up/PchelWalkUp2.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Up/PchelWalkUp3.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Up/PchelWalkUp4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+}
+animations {
+  id: "WalkLeft"
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight1.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight2.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight3.png"
+  }
+  images {
+    image: "/JamContent/Characters/Player/Walk/Right/PchelWalkRight4.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 7
+  flip_horizontal: 1
+}
+extrude_borders: 2

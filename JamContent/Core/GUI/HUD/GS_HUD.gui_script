@@ -1,0 +1,9 @@
+function init(self)
+	HUD = msg.url()
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("SetWorldSpeed") then
+		gui.set_text(gui.get_node("WorldSpeedText"), tostring(message.worldSpeed).."x")
+	end
+end

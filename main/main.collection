@@ -5,7 +5,7 @@ instances {
 }
 instances {
   id: "GUI_GO"
-  prototype: "/Core/GUI/GO_GUI_Layout.go"
+  prototype: "/JamContent/Core/GUI/GO_GUI_Layout.go"
   position {
     z: 10.0
   }

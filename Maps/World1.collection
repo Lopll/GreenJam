@@ -15,12 +15,37 @@ instances {
   id: "PuzzleManager"
   prototype: "/Core/PuzzleManager/GO_PuzzleManager.go"
 }
+instances {
+  id: "GO_BasicMovingObject"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint"
+  position {
+    x: -33.0
+    y: 97.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "0.1"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: 110.0
+    y: 56.0
+  }
+}
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: -34.0
-    y: -736.0
+    x: 84.0
+    y: 64.0
   }
 }
 scale_along_z: 0
@@ -37,12 +62,12 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"tilemap\"\n"
-  "  component: \"/Art/TileMaps/Basement/TM_Floor05.tilemap\"\n"
+  "  component: \"/Art/TileMaps/Basement/TM_World3.tilemap\"\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"collision\"\n"
   "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"/Art/TileMaps/Basement/TM_Floor05.tilemap\\\"\\n"
+  "  data: \"collision_shape: \\\"/Art/TileMaps/Basement/TM_World3.tilemap\\\"\\n"
   "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
   "friction: 0.1\\n"
