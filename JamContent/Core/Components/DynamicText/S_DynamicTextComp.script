@@ -1,0 +1,13 @@
+local timerH
+
+function init(self)
+    msg.post(go.get_parent(go.get_id()), "RegisterDynamicText")
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("SetText") then
+        if timerH ~= nil then timer.cancel(timerH) end
+        label.set_text("#text", message.text)
+        timerH = timer.delay(1.5, false, function()label.set_text("#text", "")end)
+    end
+end

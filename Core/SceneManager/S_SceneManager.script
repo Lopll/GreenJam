@@ -4,7 +4,7 @@ go.property("worldNum", 1)
 LANG = require "LuaModules.Lang"
 SOUND_COMPONENT = require "LuaModules.Sounds"
 ITEM_DB = require "LuaModules.ItemDB"
-DIALOGUES_DB = require "LuaModules.DialoguesDB"
+-- DIALOGUES_DB = require "LuaModules.DialoguesDB"
 KanjiDB_M = require "LuaModules.KanjiDB"
 
 PLAYER_SAVE_NAME = "Player"
@@ -21,7 +21,7 @@ function init(self)
     SCENE_MANAGER = msg.url()    
     
     ITEM_DB.init()
-    DIALOGUES_DB.init()
+    -- DIALOGUES_DB.init()
     
     -- load world
     msg.post("#", "LoadData")

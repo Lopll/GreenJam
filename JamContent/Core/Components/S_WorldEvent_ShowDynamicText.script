@@ -1,0 +1,7 @@
+go.property("text", hash(""))
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Call") then
+		msg.post(PLAYER_URL, "ShowDynamicText", {text = LANG.getTextByHash(self.text)})
+	end
+end

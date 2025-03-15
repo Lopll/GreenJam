@@ -265,6 +265,12 @@ function on_message(self, message_id, message, sender)
 		if message.other_group == hash("movingWall") and checkPoint ~= nil then
 			go.set_position(checkPoint)
 		end
+	elseif message_id == hash("RegisterDynamicText") then
+		self.dynamicText = sender
+	elseif message_id == hash("ShowDynamicText") then
+		if self.dynamicText ~= nil then
+			msg.post(self.dynamicText, "SetText", {text = message.text})
+		end
 	end
 end
 

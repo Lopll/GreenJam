@@ -2,7 +2,7 @@ go.property("triggerActive", true)
 go.property("functionsAmount", 1)
 go.property("interactableEvent", false)
 go.property("onInit", false)
--- go.property("deleteEvent", )
+go.property("deleteEvent", true)
 
 local function updateSaveData(self)
     msg.post(WORLD_MANAGER, "ChangeData", 
@@ -22,7 +22,11 @@ local function triggerEvents(self)
 	timer.delay(0.2, false, 
 	function() 
 	  msg.post(".", "setTriggerActive", {triggerActive = false})
-	  go.delete() 
+	  if self.deleteEvent then 
+	  	go.delete()
+	  else
+	  	timer.delay(0.2, false, function() msg.post(".", "setTriggerActive", {triggerActive = false}) end)
+	  end 
 	end)
 end
 
