@@ -1,0 +1,28 @@
+go.property("animTime", -1)
+go.property("easing", hash(""))
+go.property("teleportOnReach", false)
+
+function init(self)
+    self.objects = {}
+    timer.delay(1, false,
+    function()
+        for k, v in pairs(self.objects) do
+            if self.animTime ~= -1 then 
+                msg.post(v, "SetAnimTime", {animTime = self.animTime})
+            end
+            if self.easing ~= hash("") then
+                msg.post(v, "SetEasing", {easing = self.easing})
+            end
+            msg.post(v, "SetTeleportOnReach", {teleportOnReach = self.teleportOnReach})
+            
+            msg.post(v, "Start")
+        end
+        
+    end)
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("RegisterMovingObject") then
+        table.insert(self.objects, sender)
+    end
+end

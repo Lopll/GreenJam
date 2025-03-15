@@ -17,12 +17,12 @@ local direction = DIRECTIONS.DOWN
 local isSoundPlaying = false
 
 -- dev mode, when not active debug keys dont work
-local devMode = false
+local devMode = true
 
 local currentWorldSpeed = 1
 
 local checkPoint
-local timeControlEnabled = false
+local timeControlEnabled = devMode
 
 function init(self)
     PLAYER_URL = msg.url()
@@ -43,6 +43,8 @@ function init(self)
     
     -- sprint ink-spending timer handle
     self.sprintTimerH = nil
+    
+    msg.post(HUD, "SetSpeedVisible", {visible = timeControlEnabled})
 end
 
 -- defines direction of the walk animation
@@ -274,7 +276,6 @@ function on_message(self, message_id, message, sender)
 		end
 	elseif message_id == hash("SetTimeControlEnabled") then
 		 timeControlEnabled = message.timeControlEnabled
-		 print(message.timeControlEnabled)
 		 msg.post(HUD, "SetSpeedVisible", {visible = message.timeControlEnabled})
 	end
 end

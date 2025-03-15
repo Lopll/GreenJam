@@ -21,6 +21,11 @@ function init(self)
 	self.easingMode = go.EASING_LINEAR
 	self.startPos = go.get_position()
 	defineEasing(self)
+	
+	local parent = go.get_parent(go.get_id())
+	if parent ~= nil then
+		msg.post(parent, "RegisterMovingObject")
+	end
 end
 
 local function onReach(self)
@@ -32,14 +37,32 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("RegisterDestinationPoint") then
 		self.dest = message.dest + self.startPos
 		
-		local looping = go.PLAYBACK_LOOP_PINGPONG
+		local parent = go.get_parent(go.get_id())
+		
+		self.looping = go.PLAYBACK_LOOP_PINGPONG
 		local endFunc = nil
 		
 		if self.teleportOnReach then
-			looping = go.PLAYBACK_ONCE_FORWARD
+			self.looping = go.PLAYBACK_ONCE_FORWARD
 			endFunc = onReach
 		end
 		
-		go.animate(".", "position", looping, self.dest, self.easingMode, self.animTime, 0, endFunc)
+		if parent == nil then
+			go.animate(".", "position", self.looping, self.dest, self.easingMode, self.animTime, 0, endFunc)
+		end
+	elseif message_id == hash("SetAnimTime") then
+		self.animTime = message.animTime
+	elseif message_id == hash("SetEasing") then
+		self.easing = message.easing
+		defineEasing(self)
+	elseif message_id == hash("SetTeleportOnReach") then
+		self.teleportOnReach = message.teleportOnReach
+	elseif message_id == hash("Start") then
+		local endFunc = nil
+		if self.teleportOnReach then
+			self.looping = go.PLAYBACK_ONCE_FORWARD
+			endFunc = onReach
+		end
+		go.animate(".", "position", self.looping, self.dest, self.easingMode, self.animTime, 0, endFunc)
 	end
 end
