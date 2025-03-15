@@ -6,7 +6,7 @@ embedded_components {
   id: "text"
   type: "label"
   data: "size {\n"
-  "  x: 64.0\n"
+  "  x: 100.0\n"
   "  y: 64.0\n"
   "}\n"
   "pivot: PIVOT_NW\n"
@@ -15,8 +15,8 @@ embedded_components {
   "material: \"/builtins/fonts/label-df.material\"\n"
   ""
   position {
-    x: -149.0
-    y: 75.0
+    x: -135.0
+    y: 80.0
     z: 10.0
   }
 }

@@ -12,6 +12,7 @@ embedded_components {
   id: "sound"
   type: "sound"
   data: "sound: \"/Sounds/HUD/Button/ButtonHover.ogg\"\n"
+  "group: \"jamMaster\"\n"
   ""
 }
 embedded_components {

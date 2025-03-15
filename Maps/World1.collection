@@ -207,28 +207,12 @@ instances {
   id: "WE_SetDynamicText"
   prototype: "/JamContent/Core/WE_SetDynamicText.go"
   position {
-    x: -175.0
+    x: -113.0
     y: 96.0
   }
   rotation {
     z: 0.7092008
     w: 0.70500654
-  }
-  component_properties {
-    id: "S_WorldEvent"
-    properties {
-      id: "deleteEvent"
-      value: "false"
-      type: PROPERTY_TYPE_BOOLEAN
-    }
-  }
-}
-instances {
-  id: "WE_SetDynamicText1"
-  prototype: "/JamContent/Core/WE_SetDynamicText.go"
-  position {
-    x: -472.0
-    y: 324.0
   }
   component_properties {
     id: "S_WorldEvent"
@@ -279,12 +263,332 @@ instances {
     }
   }
 }
+instances {
+  id: "WE_SetDynamicText4"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1020.0
+    y: 1797.0
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText5"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1746.0
+    y: 1332.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText6"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1753.0
+    y: 790.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText7"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1749.0
+    y: 488.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText8"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1749.0
+    y: 102.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText9"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1753.0
+    y: -276.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText10"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 1349.0
+    y: -466.0
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText1"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 209.0
+    y: 102.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "deleteEvent"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject6"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint6"
+  position {
+    x: -309.0
+    y: 49.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "8.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject7"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint7"
+  position {
+    x: -317.0
+    y: 91.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "8.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint6"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: 657.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicDestPoint7"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: 697.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicMovingObject8"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint8"
+  position {
+    x: 376.0
+    y: 159.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "8.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject9"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint9"
+  position {
+    x: 374.0
+    y: 126.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "8.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "teleportOnReach"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint8"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -726.0
+    y: -10.0
+  }
+}
+instances {
+  id: "GO_BasicDestPoint9"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -726.0
+    y: -10.0
+  }
+}
+instances {
+  id: "WE_SetCheckPoint1"
+  prototype: "/JamContent/Core/WE_SetCheckPoint.go"
+  position {
+    x: 20.0
+    y: -17.0
+  }
+}
+instances {
+  id: "WE_ShowTip"
+  prototype: "/JamContent/Core/WE_ShowTip.go"
+  position {
+    x: -523.0
+    y: 1066.0
+  }
+  component_properties {
+    id: "S_WorldEvent"
+    properties {
+      id: "functionsAmount"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "function1"
+    properties {
+      id: "tipText"
+      value: "timeControlEnabling"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "WE_SetDynamicText11"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 6.0
+    y: 1030.0
+  }
+  component_properties {
+    id: "function1"
+    properties {
+      id: "text"
+      value: "timeControl"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: 25.0
-    y: 582.0
+    x: 1.0
+    y: 933.0
   }
 }
 scale_along_z: 0
@@ -348,46 +652,12 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -196.0
+    x: -134.0
     y: 99.0
   }
   rotation {
     z: 0.7092008
     w: 0.70500654
-  }
-}
-embedded_instances {
-  id: "GO_InvWall1"
-  data: "embedded_components {\n"
-  "  id: \"collision\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
-  "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"wall\\\"\\n"
-  "mask: \\\"player\\\"\\n"
-  "mask: \\\"playerTrigger\\\"\\n"
-  "embedded_collision_shape {\\n"
-  "  shapes {\\n"
-  "    shape_type: TYPE_BOX\\n"
-  "    position {\\n"
-  "    }\\n"
-  "    rotation {\\n"
-  "    }\\n"
-  "    index: 0\\n"
-  "    count: 3\\n"
-  "  }\\n"
-  "  data: 102.00274\\n"
-  "  data: 10.0\\n"
-  "  data: 10.0\\n"
-  "}\\n"
-  "\"\n"
-  "}\n"
-  ""
-  position {
-    x: -469.0
-    y: 339.0
   }
 }
 embedded_instances {
@@ -464,5 +734,356 @@ embedded_instances {
   rotation {
     z: 0.7092008
     w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall4"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1023.0
+    y: 1812.0
+  }
+}
+embedded_instances {
+  id: "GO_InvWall5"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1765.0
+    y: 1335.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall6"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1772.0
+    y: 793.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall7"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1768.0
+    y: 491.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall8"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1768.0
+    y: 105.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall9"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1772.0
+    y: -273.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "GO_InvWall10"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 1352.0
+    y: -486.0
+  }
+}
+embedded_instances {
+  id: "GO_InvWall1"
+  data: "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "mask: \\\"playerTrigger\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 102.00274\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 228.0
+    y: 105.0
+  }
+  rotation {
+    z: 0.7092008
+    w: 0.70500654
+  }
+}
+embedded_instances {
+  id: "WE_ShowTIpAndEnableSpeedControl"
+  data: "components {\n"
+  "  id: \"function1\"\n"
+  "  component: \"/JamContent/Core/WE_ShowTip.script\"\n"
+  "  properties {\n"
+  "    id: \"tipText\"\n"
+  "    value: \"timeControlEnabling\"\n"
+  "    type: PROPERTY_TYPE_HASH\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"S_WorldEvent\"\n"
+  "  component: \"/Placeables/Common/S_WorldEvent.script\"\n"
+  "  properties {\n"
+  "    id: \"functionsAmount\"\n"
+  "    value: \"2.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"function2\"\n"
+  "  component: \"/JamContent/Core/WE_SetSpeedControlEnabled.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_TRIGGER\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"trigger\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 108.86479\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 3.0
+    y: 1051.0
   }
 }

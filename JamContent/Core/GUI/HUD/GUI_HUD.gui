@@ -3,6 +3,10 @@ fonts {
   name: "LabelOutlined"
   font: "/Art/Fonts/LabelOutlined.font"
 }
+textures {
+  name: "ATL_Jam"
+  texture: "/JamContent/Art/ATL_Jam.atlas"
+}
 nodes {
   position {
     x: 640.0
@@ -26,6 +30,51 @@ nodes {
   id: "WorldSpeedText"
   parent: "BaseNode"
   inherit_alpha: true
+  visible: false
+}
+nodes {
+  position {
+    x: -539.0
+    y: -239.0
+  }
+  rotation {
+    z: -45.0
+  }
+  size {
+    x: 540.0
+    y: 540.0
+  }
+  type: TYPE_BOX
+  texture: "ATL_Jam/GGAD"
+  id: "GGAD"
+  parent: "BaseNode"
+  inherit_alpha: true
+  visible: false
+}
+nodes {
+  position {
+    x: -596.0
+    y: 305.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 600.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "\320\220\320\221\320\236\320\221\320\220\n"
+  ""
+  font: "LabelOutlined"
+  id: "GGAD_Text"
+  pivot: PIVOT_NW
+  line_break: true
+  parent: "BaseNode"
+  inherit_alpha: true
+  text_tracking: 0.2
+  visible: false
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

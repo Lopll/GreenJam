@@ -25,4 +25,7 @@ images {
 images {
   image: "/JamContent/Art/Objects/TaxiVertUp.png"
 }
+images {
+  image: "/JamContent/Art/GGAD.png"
+}
 extrude_borders: 2

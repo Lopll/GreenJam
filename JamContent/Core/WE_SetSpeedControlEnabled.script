@@ -1,0 +1,7 @@
+go.property("enabled", true)
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        msg.post(PLAYER_URL, "SetTimeControlEnabled", {timeControlEnabled = self.enabled})
+    end
+end

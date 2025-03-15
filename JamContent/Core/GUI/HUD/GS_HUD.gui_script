@@ -1,3 +1,7 @@
+local Sound = require "LuaModules.Sounds"
+
+local tipTime = 4
+
 function init(self)
 	HUD = msg.url()
 end
@@ -5,5 +9,22 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("SetWorldSpeed") then
 		gui.set_text(gui.get_node("WorldSpeedText"), tostring(message.worldSpeed).."x")
+	elseif message_id == hash("ShowTip") then
+		local ggad = gui.get_node("GGAD")
+		local ggadText = gui.get_node("GGAD_Text")
+		gui.set_visible(ggad, true)
+		gui.set_visible(ggadText, true)
+		gui.set_text(ggadText, message.text)
+		
+		gui.animate(ggad, "rotation.z", 0, gui.EASING_OUTINBOUNCE, tipTime/3, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+		msg.post(SCENE_MANAGER, "PlaySound", {sound = SOUNDS.pchelVoice})
+		
+		timer.delay(tipTime, false, 
+		function()
+			gui.set_visible(ggad, false)
+			gui.set_visible(ggadText, false)
+		end)
+	elseif message_id == hash("SetSpeedVisible") then
+		gui.set_visible(gui.get_node("WorldSpeedText"), message.visible)
 	end
 end

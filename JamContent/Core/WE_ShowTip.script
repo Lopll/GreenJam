@@ -1,0 +1,7 @@
+go.property("tipText", hash(""))
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("Call") then
+        msg.post(HUD, "ShowTip", {text = LANG.getTextByHash(self.tipText)})
+    end
+end
