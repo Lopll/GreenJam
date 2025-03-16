@@ -3,6 +3,10 @@ fonts {
   name: "LabelOutlined"
   font: "/Art/Fonts/LabelOutlined.font"
 }
+fonts {
+  name: "Title"
+  font: "/Art/Fonts/Title.font"
+}
 textures {
   name: "ATL_Jam"
   texture: "/JamContent/Art/ATL_Jam.atlas"
@@ -14,6 +18,7 @@ nodes {
   }
   type: TYPE_BOX
   id: "BaseNode"
+  adjust_mode: ADJUST_MODE_STRETCH
   inherit_alpha: true
 }
 nodes {
@@ -28,6 +33,7 @@ nodes {
   text: "1x"
   font: "LabelOutlined"
   id: "WorldSpeedText"
+  adjust_mode: ADJUST_MODE_STRETCH
   parent: "BaseNode"
   inherit_alpha: true
   visible: false
@@ -47,6 +53,7 @@ nodes {
   type: TYPE_BOX
   texture: "ATL_Jam/GGAD"
   id: "GGAD"
+  adjust_mode: ADJUST_MODE_STRETCH
   parent: "BaseNode"
   inherit_alpha: true
   visible: false
@@ -70,11 +77,170 @@ nodes {
   font: "LabelOutlined"
   id: "GGAD_Text"
   pivot: PIVOT_NW
+  adjust_mode: ADJUST_MODE_STRETCH
   line_break: true
   parent: "BaseNode"
   inherit_alpha: true
   text_tracking: 0.2
   visible: false
+}
+nodes {
+  type: TYPE_BOX
+  id: "FIN"
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "BaseNode"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 1280.0
+    y: 720.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "Background"
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "FIN"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 57.0
+  }
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "\320\220\320\262\321\202\320\276\321\200"
+  font: "LabelOutlined"
+  id: "text"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "FIN"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -33.0
+  }
+  scale {
+    x: 1.7
+    y: 1.7
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "\320\234\320\260\321\200\321\207\320\265\320\275\320\272\320\276 \320\234\320\260\320\272\321\201\320\270\320\274"
+  font: "LabelOutlined"
+  id: "text1"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "FIN"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: -534.0
+  }
+  scale {
+    x: 1.7
+    y: 1.7
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "\320\241\320\277\320\260\321\201\320\270\320\261\320\276!"
+  font: "LabelOutlined"
+  id: "text2"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "FIN"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 224.0
+  }
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "FIN"
+  font: "LabelOutlined"
+  id: "text3"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "FIN"
+  inherit_alpha: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "Hook"
+  parent: "BaseNode"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "\320\237\321\200\320\270\320\262\320\265\321\202, \321\201\320\276\320\273\320\275\321\213\321\210\320\272\320\276! \320\241\320\265\320\263\320\276\320\264\320\275\321\217 \320\276\321\201\320\262\320\276\320\261\320\276\320\264\320\270\320\273\320\260\321\201\321\214 \320\277\320\276\321\200\320\260\320\275\321\214\321\210\320\265, \320\277\320\276\321\215\321\202\320\276\320\274\321\203 \320\274\320\276\320\266\320\265\320\274 \320\262\321\201\321\202\321\200\320\265\321\202\320\270\321\202\321\214\321\201\321\217, \320\265\321\201\320\273\320\270 \321\202\321\213, \320\272\320\276\320\275\320\265\321\207\320\275\320\276, \321\205\320\276\321\207\320\265\321\210\321\214... \320\222 \320\273\321\216\320\261\320\276\320\274 \321\201\320\273\321\203\321\207\320\260\320\265 \320\275\320\260\320\264\320\265\321\216\321\201\321\214, \321\207\321\202\320\276 \321\202\321\213 \320\277\321\200\320\270\320\264\321\221\321\210\321\214 \320\261\320\265\320\267 \320\276\320\277\320\276\320\267\320\264\320\260\320\275\320\270\320\271, \321\217 \320\275\320\265\321\202\320\265\321\200\320\277\320\265\320\273\320\270\320\262\320\260..."
+  font: "LabelOutlined"
+  id: "text4"
+  line_break: true
+  parent: "Hook"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 300.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 80.0
+    y: 50.0
+  }
+  type: TYPE_TEXT
+  text: "10:00"
+  font: "LabelOutlined"
+  id: "Timer"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "BaseNode"
+  inherit_alpha: true
+  text_tracking: 0.2
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

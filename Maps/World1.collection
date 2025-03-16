@@ -4914,12 +4914,990 @@ instances {
     y: -10.0
   }
 }
+instances {
+  id: "WE_SetCheckPoint9"
+  prototype: "/JamContent/Core/WE_SetCheckPoint.go"
+  position {
+    x: 1217.0
+    y: 243.0
+  }
+}
+instances {
+  id: "GO_MovingBlock8"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject127"
+  children: "GO_BasicMovingObject128"
+  children: "GO_BasicMovingObject129"
+  position {
+    x: 1071.0
+    y: 308.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject127"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint127"
+  position {
+    x: 1.0
+    y: -52.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint127"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicMovingObject128"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint128"
+  position {
+    y: -29.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint128"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicMovingObject129"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint129"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint129"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_MovingBlock9"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject130"
+  children: "GO_BasicMovingObject131"
+  children: "GO_BasicMovingObject132"
+  position {
+    x: 1039.0
+    y: 286.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject132"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint132"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint132"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicMovingObject130"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint130"
+  position {
+    x: 1.0
+    y: -33.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint130"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicMovingObject131"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint131"
+  position {
+    x: 1.0
+    y: -62.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "TaxiVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint131"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_MovingBlock10"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject133"
+  children: "GO_BasicMovingObject134"
+  children: "GO_BasicMovingObject135"
+  position {
+    x: 981.0
+    y: 306.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.8"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_MovingBlock11"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject136"
+  children: "GO_BasicMovingObject137"
+  children: "GO_BasicMovingObject138"
+  position {
+    x: 949.0
+    y: 286.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.6"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject133"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint133"
+  position {
+    x: 1.0
+    y: -52.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject134"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint134"
+  position {
+    y: -29.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject135"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint135"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint133"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint134"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint135"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicMovingObject136"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint136"
+  position {
+    x: 1.0
+    y: -33.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject137"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint137"
+  position {
+    x: 1.0
+    y: -62.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "TaxiVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject138"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint138"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint136"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint137"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint138"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_MovingBlock12"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject139"
+  children: "GO_BasicMovingObject140"
+  children: "GO_BasicMovingObject141"
+  position {
+    x: 890.0
+    y: 306.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.4"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "easing"
+      value: "INOUTEXPO"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_MovingBlock13"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject142"
+  children: "GO_BasicMovingObject143"
+  children: "GO_BasicMovingObject144"
+  position {
+    x: 858.0
+    y: 290.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.35"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "easing"
+      value: "OUTINEXPO"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject139"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint139"
+  position {
+    x: 1.0
+    y: -52.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject140"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint140"
+  position {
+    y: -29.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject141"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint141"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint139"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint140"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint141"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicMovingObject142"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint142"
+  position {
+    x: 1.0
+    y: -33.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject143"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint143"
+  position {
+    x: 1.0
+    y: -62.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "TaxiVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject144"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint144"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint142"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint143"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint144"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_MovingBlock14"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject145"
+  children: "GO_BasicMovingObject146"
+  children: "GO_BasicMovingObject147"
+  position {
+    x: 787.0
+    y: 306.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.3"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_MovingBlock15"
+  prototype: "/JamContent/Core/GO_MovingBlock.go"
+  children: "GO_BasicMovingObject148"
+  children: "GO_BasicMovingObject149"
+  children: "GO_BasicMovingObject150"
+  position {
+    x: 755.0
+    y: 288.0
+  }
+  component_properties {
+    id: "S_MovingBlockOrganizer"
+    properties {
+      id: "animTime"
+      value: "0.25"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject145"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint145"
+  position {
+    x: 1.0
+    y: -52.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject146"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint146"
+  position {
+    y: -29.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject147"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint147"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint145"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint146"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicDestPoint147"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: -68.0579
+  }
+}
+instances {
+  id: "GO_BasicMovingObject148"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint148"
+  position {
+    x: 1.0
+    y: -33.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "RedCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject149"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint149"
+  position {
+    x: 1.0
+    y: -62.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "TaxiVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicMovingObject150"
+  prototype: "/JamContent/Core/GO_BasicMovingObject.go"
+  children: "GO_BasicDestPoint150"
+  position {
+    x: 1.0
+    y: 26.0
+  }
+  component_properties {
+    id: "S_MovingObject"
+    properties {
+      id: "animTime"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  component_properties {
+    id: "S_SpriteByName"
+    properties {
+      id: "spriteName"
+      value: "GreenCarVertDown"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "GO_BasicDestPoint148"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint149"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "GO_BasicDestPoint150"
+  prototype: "/JamContent/Core/GO_BasicDestPoint.go"
+  position {
+    x: -0.044424
+    y: 34.9421
+  }
+}
+instances {
+  id: "WE_SetDynamicText21"
+  prototype: "/JamContent/Core/WE_SetDynamicText.go"
+  position {
+    x: 635.0
+    y: 282.0
+  }
+  rotation {
+    z: 0.57250327
+    w: 0.8199024
+  }
+  component_properties {
+    id: "function1"
+    properties {
+      id: "text"
+      value: "metro"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: 1077.0
-    y: 544.0
+    x: 170.0
+    y: -171.0
   }
 }
 scale_along_z: 0
@@ -5716,5 +6694,47 @@ embedded_instances {
   position {
     x: -15.0
     y: 714.0
+  }
+}
+embedded_instances {
+  id: "WE_FIN"
+  data: "components {\n"
+  "  id: \"S_WorldEvent\"\n"
+  "  component: \"/Placeables/Common/S_WorldEvent.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"function1\"\n"
+  "  component: \"/JamContent/Core/S_WorldEvent_FIN.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collision\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_TRIGGER\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"trigger\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: -22.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 8.0\\n"
+  "  data: 40.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    x: 547.0
+    y: 295.0
   }
 }
