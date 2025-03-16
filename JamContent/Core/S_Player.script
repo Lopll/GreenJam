@@ -24,19 +24,21 @@ local currentWorldSpeed = 1
 local checkPoint
 local timeControlEnabled = devMode
 
-local TIME = 3000
+local TIME = 600
 
 local currentTime = 0
 
 local function setWorldSpeed(speed)
 	currentWorldSpeed = speed
+	go.set("#sound", "speed", speed)
+	sound.play("#sound")
 	msg.post(SCENE_MANAGER, "SetWorldSpeed", {worldSpeed = speed})
 	msg.post(HUD, "SetWorldSpeed", {worldSpeed = speed})
 end
 
 function init(self)
     PLAYER_URL = msg.url()
-	msg.post(".", "acquire_input_focus")
+	-- msg.post(".", "acquire_input_focus")
     
     -- start input
     self.input = vmath.vector3(0, 0, 0)

@@ -131984,7 +131984,7 @@ layers {
   cell {
     x: 91
     y: 22
-    tile: 194
+    tile: 279
   }
   cell {
     x: 101
@@ -132389,7 +132389,7 @@ layers {
   cell {
     x: 91
     y: 23
-    tile: 195
+    tile: 194
   }
   cell {
     x: 101
@@ -132789,7 +132789,7 @@ layers {
   cell {
     x: 91
     y: 24
-    tile: 168
+    tile: 195
   }
   cell {
     x: 101
@@ -133080,6 +133080,11 @@ layers {
     x: 84
     y: 25
     tile: 233
+  }
+  cell {
+    x: 91
+    y: 25
+    tile: 168
   }
   cell {
     x: 101

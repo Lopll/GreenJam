@@ -6815,3 +6815,51 @@ embedded_instances {
     y: -270.0
   }
 }
+embedded_instances {
+  id: "ControlsHint"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"WASD\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/JamContent/Art/ATL_Jam.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 12.0\n"
+  "    y: 110.0\n"
+  "    z: -2.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"Arrow_Sign\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 96.0\\n"
+  "  y: 64.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/JamContent/Art/ATL_Jam.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 158.0\n"
+  "    y: 100.0\n"
+  "    z: -2.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 131.0
+    y: -257.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+  }
+}

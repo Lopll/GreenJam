@@ -31,6 +31,18 @@ images {
 images {
   image: "/JamContent/Art/Objects/Obstacle.png"
 }
+images {
+  image: "/JamContent/Art/Arrow_Sign.png"
+}
+images {
+  image: "/JamContent/Art/WASD.png"
+}
+images {
+  image: "/JamContent/Art/girl.png"
+}
+images {
+  image: "/JamContent/Art/phone.png"
+}
 animations {
   id: "RedCarHorInv"
   images {

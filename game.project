@@ -54,5 +54,5 @@ max_count = 1024
 subpixels = 1
 
 [tilemap]
-max_tile_count = 8192
+max_tile_count = 16384
 

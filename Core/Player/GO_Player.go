@@ -66,7 +66,8 @@ embedded_components {
 embedded_components {
   id: "sound"
   type: "sound"
-  data: "sound: \"/Sounds/HUD/Button/ButtonHover.ogg\"\n"
+  data: "sound: \"/Sounds/button1.ogg\"\n"
+  "group: \"player\"\n"
   ""
 }
 embedded_components {

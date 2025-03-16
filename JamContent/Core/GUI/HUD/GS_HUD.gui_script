@@ -5,6 +5,11 @@ local tipTime = 4
 function init(self)
 	HUD = msg.url()
 	
+	timer.delay(8, false, 
+	function()
+		gui.set_enabled(gui.get_node("Hook"), false)
+		msg.post(PLAYER_URL, "acquire_input_focus")
+	end)
 end
 
 function on_message(self, message_id, message, sender)
@@ -28,6 +33,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("SetSpeedVisible") then
 		gui.set_visible(gui.get_node("WorldSpeedText"), message.visible)
 	elseif message_id == hash("FIN") then
+		msg.post(SCENE_MANAGER, "SetWorldSpeed", {worldSpeed = 0})
 		gui.set_alpha(gui.get_node("FIN"), 1)
 		gui.animate(gui.get_node("text2"), "position.y", -200, gui.EASING_LINEAR, 3, 0, nil, gui.PLAYBACK_ONCE_FORWARD)
 		timer.delay(10, false, function()sys.exit(0)end)

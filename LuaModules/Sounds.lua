@@ -25,7 +25,12 @@ SOUNDS =
     doorOpen = soundDir.."/Placeables/Door/DoorOpen.ogg",
     --Characters
     ----Pchel
-    pchelVoice = soundDir.."/Characters/Pchel/PchelVoice.ogg"
+    pchelVoice = soundDir.."/Characters/Pchel/PchelVoice.ogg",
+    
+    
+    
+    -- jam
+    btn = soundDir.."/button1.ogg"
     
 }
 
