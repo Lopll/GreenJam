@@ -56,8 +56,8 @@ embedded_components {
   "    index: 1\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 9.0\n"
-  "  data: 9.0\n"
+  "  data: 8.0\n"
+  "  data: 8.0\n"
   "  data: 1.5\n"
   "  data: 10.0\n"
   "}\n"
@@ -86,7 +86,11 @@ embedded_components {
   ""
   position {
     y: -8.0
-    z: 0.59
+    z: 0.4
+  }
+  scale {
+    x: 0.75
+    y: 0.75
   }
 }
 embedded_components {
@@ -115,5 +119,13 @@ embedded_components {
   "  data: 10.0\n"
   "  data: 0.5\n"
   "}\n"
+  ""
+}
+embedded_components {
+  id: "voice"
+  type: "sound"
+  data: "sound: \"/Sounds/Death.ogg\"\n"
+  "group: \"voice\"\n"
+  "gain: 0.5\n"
   ""
 }

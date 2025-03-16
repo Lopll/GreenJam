@@ -35,7 +35,7 @@ function on_message(self, message_id, message, sender)
     -- requesting saved data
     elseif message_id == hash("LoadData") then
         local save = SaveLoad.loadData("World"..tostring(self.worldNumber))
-        if save ~= 0 then
+        if save ~= nil and save ~= 0 then
             savedData = save.data
             unsavedData = save.objects
             sendMessageToObjects("LoadData")

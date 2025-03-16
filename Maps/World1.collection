@@ -2,14 +2,6 @@ name: "World2"
 instances {
   id: "GO_WorldObjectManager"
   prototype: "/Core/WorldObjectManager/GO_WorldObjectManager.go"
-  component_properties {
-    id: "WorldObjectManager"
-    properties {
-      id: "worldNumber"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
 }
 instances {
   id: "PuzzleManager"
@@ -620,7 +612,7 @@ instances {
   prototype: "/JamContent/Core/WE_SetDynamicText.go"
   position {
     x: 6.0
-    y: 1091.0
+    y: 1110.0
   }
   component_properties {
     id: "function1"
@@ -5645,7 +5637,7 @@ instances {
     id: "S_MovingBlockOrganizer"
     properties {
       id: "animTime"
-      value: "0.25"
+      value: "0.26"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -5905,12 +5897,20 @@ instances {
     y: -10.0
   }
 }
+instances {
+  id: "WE_SetCheckPoint10"
+  prototype: "/JamContent/Core/WE_SetCheckPoint.go"
+  position {
+    x: 170.0
+    y: -228.0
+  }
+}
 collection_instances {
   id: "PlayerCollection"
   collection: "/Core/Player/PlayerCollection.collection"
   position {
-    x: 170.0
-    y: -171.0
+    x: 148.0
+    y: -174.0
   }
 }
 scale_along_z: 0

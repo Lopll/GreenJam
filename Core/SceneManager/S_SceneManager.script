@@ -99,12 +99,11 @@ function on_message(self, message_id, message, sender)
         msg.post("#", "unload")
     
     elseif message_id == hash("SaveData") then
-        SaveLoad.saveData("SceneManager", {worldNum = self.worldNum})
-        
+         SaveLoad.saveData("SceneManager", {worldNum = self.worldNum})
     elseif message_id == hash("LoadData") then
         -- get save data if ones exists
         local save = SaveLoad.loadData("SceneManager")
-        if save ~= 0 then
+        if save ~= nil and save ~= 0 then
             self.worldNum = save.worldNum
         end
         
@@ -126,7 +125,6 @@ function on_message(self, message_id, message, sender)
         else
             msg.post("#", "restart")
         end
-    
     elseif message_id == hash("PlaySound") then
 	   -- get path of the sound property in sound component
 	   local snd = sys.load_resource(message.sound)
@@ -139,6 +137,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("StopBrushSound") then
 	   sound.stop("#brushSound")
 	elseif message_id == hash("SetWorldSpeed") then
+	   go.set("#brushSound", "speed", message.worldSpeed)
 	   msg.post(currentWorld, "set_time_step", {factor = message.worldSpeed, mode = 0})
     end
 end

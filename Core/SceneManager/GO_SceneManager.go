@@ -13,12 +13,15 @@ embedded_components {
   type: "sound"
   data: "sound: \"/Sounds/HUD/Button/ButtonHover.ogg\"\n"
   "group: \"jamMaster\"\n"
+  "gain: 0.6\n"
   ""
 }
 embedded_components {
   id: "brushSound"
   type: "sound"
-  data: "sound: \"/Sounds/HUD/Brush.ogg\"\n"
+  data: "sound: \"/Sounds/street.ogg\"\n"
   "looping: 1\n"
+  "group: \"music\"\n"
+  "gain: 0.2\n"
   ""
 }

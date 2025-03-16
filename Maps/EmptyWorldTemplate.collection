@@ -2,14 +2,6 @@ name: "World2"
 instances {
   id: "GO_WorldObjectManager"
   prototype: "/Core/WorldObjectManager/GO_WorldObjectManager.go"
-  component_properties {
-    id: "WorldObjectManager"
-    properties {
-      id: "worldNumber"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
 }
 instances {
   id: "PuzzleManager"

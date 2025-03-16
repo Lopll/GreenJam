@@ -9,6 +9,7 @@ function init(self)
 	function()
 		gui.set_enabled(gui.get_node("Hook"), false)
 		msg.post(PLAYER_URL, "acquire_input_focus")
+		msg.post(SCENE_MANAGER, "PlayBrushSound")
 	end)
 end
 

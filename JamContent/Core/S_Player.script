@@ -24,7 +24,7 @@ local currentWorldSpeed = 1
 local checkPoint
 local timeControlEnabled = devMode
 
-local TIME = 600
+local TIME = 780
 
 local currentTime = 0
 
@@ -61,6 +61,10 @@ function init(self)
     msg.post(HUD, "SetSpeedVisible", {visible = timeControlEnabled})
     
     if not devMode then defos.toggle_fullscreen() end
+    
+    local min = math.floor(TIME/60)
+    local sec = TIME - min * 60
+    msg.post(HUD, "SetTimer", {min = tostring(min), sec = tostring(sec)})
     
 end
 
@@ -280,12 +284,21 @@ function on_message(self, message_id, message, sender)
 	
 	elseif message_id == hash("collision_response") then
 		if message.other_group == hash("movingWall") and checkPoint ~= nil then
+			local snd = sys.load_resource(SOUNDS.death)
+	   		local path = go.get("#voice", "sound")
+	   		resource.set_sound(path, snd)
+	   		sound.play("#voice")
+	   		
 			go.set_position(checkPoint)
 		end
 	elseif message_id == hash("RegisterDynamicText") then
 		self.dynamicText = sender
 	elseif message_id == hash("ShowDynamicText") then
 		if self.dynamicText ~= nil then
+			local snd = sys.load_resource(SOUNDS.dt)
+	   		local path = go.get("#voice", "sound")
+	   		resource.set_sound(path, snd)
+	   		sound.play("#voice")
 			msg.post(self.dynamicText, "SetText", {text = message.text})
 		end
 	elseif message_id == hash("SetTimeControlEnabled") then
@@ -302,7 +315,7 @@ function on_message(self, message_id, message, sender)
 			
 			if currentTime == TIME then
 				timer.cancel(self.timerH)
-				msg.post(HUD, "SetTimer", {min = "0", sec = "00"})
+				msg.post(HUD, "SetTimer", {min = "10", sec = "00"})
 				msg.post(PLAYER_URL, "ShowDynamicText", {text = TEXTS.over})
 				timer.delay(5, false, function() msg.post(SCENE_MANAGER, "restart")  end)			
 			end 
