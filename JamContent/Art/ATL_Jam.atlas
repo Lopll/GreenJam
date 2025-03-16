@@ -31,4 +31,31 @@ images {
 images {
   image: "/JamContent/Art/Objects/Obstacle.png"
 }
+animations {
+  id: "RedCarHorInv"
+  images {
+    image: "/JamContent/Art/Objects/RedCarHor.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 1
+}
+animations {
+  id: "GreenCarHorInv"
+  images {
+    image: "/JamContent/Art/Objects/GreenCarHor.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 1
+}
+animations {
+  id: "TaxiHorInv"
+  images {
+    image: "/JamContent/Art/Objects/TaxiHor.png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 1
+}
 extrude_borders: 2
