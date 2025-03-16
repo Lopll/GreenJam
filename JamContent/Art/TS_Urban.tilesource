@@ -845,7 +845,7 @@ convex_hulls {
 convex_hulls {
   index: 906
   count: 8
-  collision_group: ""
+  collision_group: "triggerZ"
 }
 convex_hulls {
   index: 914
@@ -975,12 +975,12 @@ convex_hulls {
 convex_hulls {
   index: 1072
   count: 4
-  collision_group: ""
+  collision_group: "tilemapWall"
 }
 convex_hulls {
   index: 1076
   count: 8
-  collision_group: ""
+  collision_group: "triggerZ"
 }
 convex_hulls {
   index: 1084
