@@ -17,19 +17,29 @@ local direction = DIRECTIONS.DOWN
 local isSoundPlaying = false
 
 -- dev mode, when not active debug keys dont work
-local devMode = true
+local devMode = false
 
 local currentWorldSpeed = 1
 
 local checkPoint
 local timeControlEnabled = devMode
 
+local TIME = 3000
+
+local currentTime = 0
+
+local function setWorldSpeed(speed)
+	currentWorldSpeed = speed
+	msg.post(SCENE_MANAGER, "SetWorldSpeed", {worldSpeed = speed})
+	msg.post(HUD, "SetWorldSpeed", {worldSpeed = speed})
+end
+
 function init(self)
     PLAYER_URL = msg.url()
 	msg.post(".", "acquire_input_focus")
     
-        -- start input
-        self.input = vmath.vector3(0, 0, 0)
+    -- start input
+    self.input = vmath.vector3(0, 0, 0)
 
 	self.animPlaybackRate = 1
 
@@ -44,7 +54,12 @@ function init(self)
     -- sprint ink-spending timer handle
     self.sprintTimerH = nil
     
+    setWorldSpeed(1)
+    
     msg.post(HUD, "SetSpeedVisible", {visible = timeControlEnabled})
+    
+    if not devMode then defos.toggle_fullscreen() end
+    
 end
 
 -- defines direction of the walk animation
@@ -128,12 +143,6 @@ local function interaction(self)
 	end
 end
 
-local function setWorldSpeed(speed)
-	currentWorldSpeed = speed
-	msg.post(SCENE_MANAGER, "SetWorldSpeed", {worldSpeed = speed})
-	msg.post(HUD, "SetWorldSpeed", {worldSpeed = speed})
-end
-
 local backpackEnabled = true
 
 function on_input(self, action_id, action)
@@ -181,6 +190,9 @@ function on_input(self, action_id, action)
     	if currentWorldSpeed < 2.5 then
     		setWorldSpeed(currentWorldSpeed + 0.25)
     	end
+    elseif action_id == hash("Menu") and action.pressed then
+		setWorldSpeed(1)
+		msg.post(HUD, "SetPause", {pause = true})
     -- devMode
     elseif devMode then
         if action.pressed and action_id == hash("CollisionON") then
@@ -277,6 +289,24 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("SetTimeControlEnabled") then
 		 timeControlEnabled = message.timeControlEnabled
 		 msg.post(HUD, "SetSpeedVisible", {visible = message.timeControlEnabled})
+	elseif message_id == hash("StartTimer") then
+		self.timerH = timer.delay(1, true, 
+		function()
+			currentTime = currentTime+1
+			local t = TIME - currentTime
+			local min = math.floor(t/60)
+			local sec = t - (min*60)
+			msg.post(HUD, "SetTimer", {min = tostring(min), sec = tostring(sec)})
+			
+			if currentTime == TIME then
+				timer.cancel(self.timerH)
+				msg.post(HUD, "SetTimer", {min = "0", sec = "00"})
+				msg.post(PLAYER_URL, "ShowDynamicText", {text = TEXTS.over})
+				timer.delay(5, false, function() msg.post(SCENE_MANAGER, "restart")  end)			
+			end 
+		end)
+		
+		
 	end
 end
 

@@ -221,7 +221,7 @@ nodes {
 }
 nodes {
   position {
-    y: 300.0
+    y: 312.5
   }
   scale {
     x: 2.0
@@ -232,7 +232,7 @@ nodes {
     y: 50.0
   }
   type: TYPE_TEXT
-  text: "10:00"
+  text: "0:00"
   font: "LabelOutlined"
   id: "Timer"
   xanchor: XANCHOR_LEFT
@@ -241,6 +241,52 @@ nodes {
   parent: "BaseNode"
   inherit_alpha: true
   text_tracking: 0.2
+}
+nodes {
+  type: TYPE_BOX
+  id: "Pause"
+  parent: "BaseNode"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  enabled: false
+}
+nodes {
+  size {
+    x: 1280.0
+    y: 720.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "Back"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "Pause"
+  alpha: 0.4
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "\320\237\320\260\321\203\320\267\320\260"
+  font: "LabelOutlined"
+  id: "text5"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "Pause"
+  inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
