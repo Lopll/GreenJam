@@ -12,11 +12,14 @@ PLAYER_SAVE_NAME = "Player"
 -- shader outline width
 OUTLINE_WIDTH = 0.0015
 
+local isSoundPlaying = false
+
 local needToRestart = false
 local needToChangeWorld = false
 local currentWorld = nil
 local worldWasLoaded = false
 
+local gateTime = 0.2
 function init(self)
     SCENE_MANAGER = msg.url()    
     
@@ -28,6 +31,8 @@ function init(self)
     
     -- hide cursor
     defos.set_cursor_visible(false)
+    
+    self.sounds = {}
     
 end
 
@@ -126,18 +131,44 @@ function on_message(self, message_id, message, sender)
             msg.post("#", "restart")
         end
     elseif message_id == hash("PlaySound") then
-	   -- get path of the sound property in sound component
-	   local snd = sys.load_resource(message.sound)
-	   local path = go.get("#sound", "sound")
-	   resource.set_sound(path, snd)
-	   sound.play("#sound")
+        if not isSoundPlaying then
+              isSoundPlaying = true
+            -- get path of the sound property in sound component
+	          local snd = sys.load_resource(message.sound)
+	          local path = go.get("#sound", "sound", {}, function() isSoundPlaying = false print("SOUND DONE") end)
+	          resource.set_sound(path, snd)
+	          sound.play("#sound")
+        end
 	   
+	elseif message_id == hash("sound_done") then
+	   isSoundPlaying = false
 	elseif message_id == hash("PlayBrushSound") then
-	   sound.play("#brushSound")
+       sound.play("#brushSound")
 	elseif message_id == hash("StopBrushSound") then
-	   sound.stop("#brushSound")
+       sound.stop("#brushSound")
 	elseif message_id == hash("SetWorldSpeed") then
 	   go.set("#brushSound", "speed", message.worldSpeed)
 	   msg.post(currentWorld, "set_time_step", {factor = message.worldSpeed, mode = 0})
+    elseif message_id == hash("play_gated_sound") then
+        -- Only play sounds that are not currently in the gating table.
+        if self.sounds[message.soundcomponent] == nil then
+            -- Store sound timer in table
+            self.sounds[message.soundcomponent] = gate_time
+            -- Play the sound
+            sound.play(message.soundcomponent, { gain = message.gain })
+        else
+            -- An attempt to play a sound was gated
+            print("gated " .. message.soundcomponent)
+        end
+    end
+end
+
+function update(self, dt)
+    -- Count down the stored timers
+    for k,_ in pairs(self.sounds) do
+        self.sounds[k] = self.sounds[k] - dt
+        if self.sounds[k] < 0 then
+            self.sounds[k] = nil
+        end
     end
 end

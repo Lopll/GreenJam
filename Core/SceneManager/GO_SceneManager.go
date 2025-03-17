@@ -19,7 +19,7 @@ embedded_components {
 embedded_components {
   id: "brushSound"
   type: "sound"
-  data: "sound: \"/Sounds/street.ogg\"\n"
+  data: "sound: \"/Sounds/street.wav\"\n"
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 0.2\n"

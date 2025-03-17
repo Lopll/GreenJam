@@ -612,7 +612,7 @@ instances {
   prototype: "/JamContent/Core/WE_SetDynamicText.go"
   position {
     x: 6.0
-    y: 1110.0
+    y: 1103.0
   }
   component_properties {
     id: "function1"

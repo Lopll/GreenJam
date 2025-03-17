@@ -15,6 +15,7 @@ local direction = DIRECTIONS.DOWN
 
 -- when sound was started this var = true and it doesn't allow other sounds to be played
 local isSoundPlaying = false
+local isVoicePlaying = false
 
 -- dev mode, when not active debug keys dont work
 local devMode = false
@@ -28,10 +29,16 @@ local TIME = 780
 
 local currentTime = 0
 
+local gateTime = 1
+
 local function setWorldSpeed(speed)
 	currentWorldSpeed = speed
 	go.set("#sound", "speed", speed)
-	sound.play("#sound")
+	-- if not isSoundPlaying then
+		-- isSoundPlaying = true
+		-- msg.post("#", "play_gated_sound", {soundcomponent = "#sound", gain = go.get("#sound", "gain")})
+		sound.play("#sound", {}, function() isSoundPlaying = false print("SOUND DONE") end)
+	-- end
 	msg.post(SCENE_MANAGER, "SetWorldSpeed", {worldSpeed = speed})
 	msg.post(HUD, "SetWorldSpeed", {worldSpeed = speed})
 end
@@ -65,6 +72,8 @@ function init(self)
     local min = math.floor(TIME/60)
     local sec = TIME - min * 60
     msg.post(HUD, "SetTimer", {min = tostring(min), sec = tostring(sec)})
+    
+    self.sounds = {}
     
 end
 
@@ -102,7 +111,7 @@ end
 function update(self, dt)
 	-- how fast our movement force is grow
 	-- need to synchronize start of the animation and movement
-	local forceDelta = dt * 150 * self.animPlaybackRate/(13*currentWorldSpeed)
+	local forceDelta = dt * 150 * self.animPlaybackRate/(26*currentWorldSpeed)
 	-- to have an input vector with both axes we must check it outside input method
 	if vmath.length(self.input) > 0  then
 	   go.set("#sprite", "playback_rate", self.animPlaybackRate/currentWorldSpeed)
@@ -135,6 +144,13 @@ function update(self, dt)
             go.set("#sprite", "cursor", 0)
         end
 	end
+	
+	for k,_ in pairs(self.sounds) do
+        self.sounds[k] = self.sounds[k] - dt
+        if self.sounds[k] < 0 then
+            self.sounds[k] = nil
+        end
+    end
 end
 
 local function interaction(self)
@@ -242,7 +258,8 @@ function on_message(self, message_id, message, sender)
 	   local snd = sys.load_resource(message.sound)
 	   local path = go.get("#sound", "sound")
 	   resource.set_sound(path, snd)
-	   sound.play("#sound")
+	--    msg.post("#", "play_gated_sound", {soundcomponent = "#sound", gain = go.get("#sound", "gain")})
+	   sound.play("#sound", {}, function() isSoundPlaying = false print("SOUND DONE") end)
 	   
 	elseif message_id == hash("sound_done") then
 	   isSoundPlaying = false
@@ -284,10 +301,14 @@ function on_message(self, message_id, message, sender)
 	
 	elseif message_id == hash("collision_response") then
 		if message.other_group == hash("movingWall") and checkPoint ~= nil then
-			local snd = sys.load_resource(SOUNDS.death)
-	   		local path = go.get("#voice", "sound")
-	   		resource.set_sound(path, snd)
-	   		sound.play("#voice")
+			if not isVoicePlaying then
+				isVoicePlaying = true
+				local snd = sys.load_resource(SOUNDS.death)
+	   			local path = go.get("#voice", "sound")
+	   			resource.set_sound(path, snd)
+				-- msg.post("#", "play_gated_sound", {soundcomponent = "#voice", gain = go.get("#voice", "gain")})
+				sound.play("#voice", {}, function() isVoicePlaying = false print("VOICE DONE") end)
+			end
 	   		
 			go.set_position(checkPoint)
 		end
@@ -295,10 +316,14 @@ function on_message(self, message_id, message, sender)
 		self.dynamicText = sender
 	elseif message_id == hash("ShowDynamicText") then
 		if self.dynamicText ~= nil then
-			local snd = sys.load_resource(SOUNDS.dt)
-	   		local path = go.get("#voice", "sound")
-	   		resource.set_sound(path, snd)
-	   		sound.play("#voice")
+			if not isVoicePlaying then
+				isVoicePlaying = ture
+				local snd = sys.load_resource(SOUNDS.dt)
+	   			local path = go.get("#voice", "sound")
+	   			resource.set_sound(path, snd)
+				-- msg.post("#", "play_gated_sound", {soundcomponent = "#voice", gain = go.get("#voice", "gain")})
+				sound.play("#voice", {}, function() isVoicePlaying = false print("VOICE DONE") end)
+			end
 			msg.post(self.dynamicText, "SetText", {text = message.text})
 		end
 	elseif message_id == hash("SetTimeControlEnabled") then
@@ -321,7 +346,17 @@ function on_message(self, message_id, message, sender)
 			end 
 		end)
 		
-		
+	elseif message_id == hash("play_gated_sound") then
+        -- Only play sounds that are not currently in the gating table.
+        if self.sounds[message.soundcomponent] == nil then
+            -- Store sound timer in table
+            self.sounds[message.soundcomponent] = gate_time
+            -- Play the sound
+            sound.play(message.soundcomponent, { gain = message.gain })
+        else
+            -- An attempt to play a sound was gated
+            print("gated " .. message.soundcomponent)
+        end
 	end
 end
 

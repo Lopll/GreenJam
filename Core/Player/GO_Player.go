@@ -66,7 +66,7 @@ embedded_components {
 embedded_components {
   id: "sound"
   type: "sound"
-  data: "sound: \"/Sounds/button1.ogg\"\n"
+  data: "sound: \"/Sounds/button1.wav\"\n"
   "group: \"player\"\n"
   ""
 }
@@ -124,7 +124,7 @@ embedded_components {
 embedded_components {
   id: "voice"
   type: "sound"
-  data: "sound: \"/Sounds/Death.ogg\"\n"
+  data: "sound: \"/Sounds/Death.wav\"\n"
   "group: \"voice\"\n"
   "gain: 0.5\n"
   ""

@@ -30,9 +30,9 @@ SOUNDS =
     
     
     -- jam
-    btn = soundDir.."/button1.ogg",
-    death = soundDir.."/Death.ogg",
-    dt = soundDir.."/DynamicText.ogg"
+    btn = soundDir.."/button1.wav",
+    death = soundDir.."/Death.wav",
+    dt = soundDir.."/DynamicText.wav"
     
 }
 

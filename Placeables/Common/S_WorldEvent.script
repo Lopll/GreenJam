@@ -37,7 +37,7 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if (self.triggerActive and message_id == hash("trigger_response") and not self.interactableEvent) 
+	if (self.triggerActive and message_id == hash("trigger_response") and message.enter and not self.interactableEvent) 
 	   or (message_id == hash("Interaction") and self.interactableEvent)then
 		
 		triggerEvents(self)

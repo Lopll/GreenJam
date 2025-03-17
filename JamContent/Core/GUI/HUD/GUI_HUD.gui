@@ -61,14 +61,14 @@ nodes {
 nodes {
   position {
     x: -596.0
-    y: 305.0
+    y: 265.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.75
+    y: 1.75
   }
   size {
-    x: 600.0
+    x: 700.0
     y: 100.0
   }
   type: TYPE_TEXT
