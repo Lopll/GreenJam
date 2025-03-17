@@ -268,6 +268,33 @@ nodes {
   inherit_alpha: true
 }
 nodes {
+  position {
+    y: -269.0
+  }
+  scale {
+    x: 2.5
+    y: 2.5
+  }
+  size {
+    x: 80.0
+    y: 30.0
+  }
+  color {
+    x: 0.6
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "\320\222\321\213\321\205\320\276\320\264"
+  font: "LabelOutlined"
+  id: "ExitButton"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_TOP
+  adjust_mode: ADJUST_MODE_STRETCH
+  parent: "Pause"
+  inherit_alpha: true
+}
+nodes {
   type: TYPE_BOX
   id: "Hook"
   adjust_mode: ADJUST_MODE_STRETCH

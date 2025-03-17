@@ -1,3 +1,5 @@
+local Button = require "LuaModules.Button"
+
 local Sound = require "LuaModules.Sounds"
 
 local tipTime = 4
@@ -11,6 +13,9 @@ function init(self)
 		msg.post(PLAYER_URL, "acquire_input_focus")
 		msg.post(SCENE_MANAGER, "PlayBrushSound")
 	end)
+	
+	local btn = gui.get_node("ExitButton")
+	self.exitBtn = Button.new(btn, nil, gui.get_color(btn), function()sys.exit(0)end, {}, SOUNDS.buttonHover, SOUNDS.buttonClick, nil, gui.get_scale(btn))
 end
 
 function on_message(self, message_id, message, sender)
@@ -60,6 +65,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+	Button.on_input(self, action_id, action, self.exitBtn)
 	if action_id == hash("Menu") and action.pressed then
 		msg.post(".", "SetPause", {pause = false})
 	end
