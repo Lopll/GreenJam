@@ -1,6 +1,6 @@
 local M = {}
 
-local language = "RU"
+local language = "EN"
 
 local translations = 
 {
@@ -21,12 +21,42 @@ local translations =
         directions = "О, а тут тебе надо идти на Север, Юг, Вост... А не, Запад, Восток, Юг... Точнее Запад, Юг, Восток, Юг, Запад, Север",
         west = "Запад",
         down = "Ну тут ряльно вниз надо",
-        haha = "ХА ХА ХА ХА ХА"
+        haha = "ХА ХА ХА ХА ХА",
+        
+        hook = "Привет, солнышко! Сегодня освободилась пораньше, поэтому можем встретиться, если ты, конечно, хочешь... В любом случае надеюсь, что ты придёшь без опозданий, я нетерпелива...",
+        
+        pause = "Пауза",
+        author = "Автор",
+        thanks = "Спасибо!",
+        exit = "Выход",
+        me = "Марченко Максим"
         
     },
     EN = 
     {
-
+        invWall = "I dont need to go there",
+        timeControl = "I won’t be able to go anywhere in time... I am ready to sell my soul for time!" ,
+        what = "Thats not...",
+        where = "And where I should go? I can only go back and look for another way.",
+        whatHap = "Whats going on in this town anyway?! We’ve been attacked by the army of Cringe?" ,
+        startAgain = "I was already here... bruh",
+        metro = "I finally got to the subway! Oh... I have to walk there now...",
+        over = "No, Im late. Even time managment didn't help me. I will start jogging in the morning!" ,
+        start = "Lets go!" ,
+        
+        timeControlEnabling = "Heard you, honey. Hold on, press 1, 2, 3. We will talk about our contract later",
+        directions = "Oh, you have to go North, South, West... No, West, East, South... More precisely West, South, East, South, West, North,",
+        west = "West",
+        down = "Go down",
+        haha = "HA HA HA HA HA",
+        
+        hook = "Hello, sweetie! Today I was free earlier, so we can meet, if you want to... In any case, I hope you will come without delay, Im impatient...",
+        
+        pause = "Pause",
+        author = "Author",
+        thanks = "Thanks!",
+        exit = "Exit",
+        me = "Marchenko Maksim"
     }
 }
 

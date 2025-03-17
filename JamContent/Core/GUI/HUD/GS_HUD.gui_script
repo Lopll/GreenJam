@@ -6,7 +6,12 @@ local tipTime = 4
 
 function init(self)
 	HUD = msg.url()
-	
+	gui.set_text(gui.get_node("text"), TEXTS.author)
+	gui.set_text(gui.get_node("text1"), TEXTS.me)
+	gui.set_text(gui.get_node("text2"), TEXTS.thanks)
+	gui.set_text(gui.get_node("text4"), TEXTS.hook)
+	gui.set_text(gui.get_node("text5"), TEXTS.pause)
+	gui.set_text(gui.get_node("ExitButton"), TEXTS.exit)
 	timer.delay(8, false, 
 	function()
 		gui.set_enabled(gui.get_node("Hook"), false)

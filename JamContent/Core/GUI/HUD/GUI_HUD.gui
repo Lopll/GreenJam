@@ -258,7 +258,7 @@ nodes {
     y: 30.0
   }
   type: TYPE_TEXT
-  text: "\320\237\320\260\321\203\320\267\320\260"
+  text: "Pause"
   font: "LabelOutlined"
   id: "text5"
   xanchor: XANCHOR_LEFT
@@ -285,7 +285,7 @@ nodes {
     z: 0.0
   }
   type: TYPE_TEXT
-  text: "\320\222\321\213\321\205\320\276\320\264"
+  text: "Exit"
   font: "LabelOutlined"
   id: "ExitButton"
   xanchor: XANCHOR_LEFT
